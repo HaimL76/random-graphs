@@ -25,6 +25,18 @@ In addition,
 \[G(V,\phi)\notin{A}\Rightarrow\mathbb{P}[G\sim{G(n,0)}\in{A}]=0\]\[K_n\in{A}\Rightarrow\mathbb{P}[G\sim{G(n,1)}\in{A}]=1\]
 
 Thus, by the intermediate value theorem, for any $0\leq{a}\leq{1}$ there exists $0\leq{p_a}\leq{1}$, s.t. $\mathbb{P}[G\sim{G(n,p_a)}\in{A}]=a$. We take $a=\frac{1}{2}$, so $p^\ast=p_\frac{1}{2}$.
+\subsection{}
+For every $0\leq{k}\leq{1}$ and $k\geq{0}$, $1-kp\leq(1-p)^k$, by simple induction,
+
+For $k=0$, $1-0\cdot{p}=1\leq{(1-p)^0}=1$
+
+For $k+1$, $(1-p)^{k+1}=(1-p)^k(1-p)\geq(1-kp)(1-p)=1-kp-p+kp^2=1-(k+1)p+kp^2\geq{1-(k+1)p}$.
+
+Let $0\leq{q}\leq{1}$ be a probability s.t. $1-q=(1-p)^k$, by staged exposure it says that the two models $G(n,q)$ and $\bigcup_{i=1}^kG(n,p)$ are identical (have the same distribution), hence,
+\[\mathbb{P}[G(n,q)\in{A}]=\mathbb{P}[\bigcup_{i=1}^kG(n,p)\in{A}]\Rightarrow\mathbb{P}[G(n,q)\notin{A}]=\mathbb{P}[\bigcap_{i=1}^kG(n,p)\notin{A}]=\]\[=\prod_{i=1}^k\mathbb{P}[G(n,p)\notin{A}]=(1-\mathbb{P}[G(n,p)\in{A}])^k=(1-q)^k,\]
+because all distinct copies of $G(n,p)$ are independent.
+
+But $1-kp\leq(1-p)^k=1-q\Rightarrow{kp\geq{q}}\Rightarrow\mathbb{P}[G(n,kp)\in{A}]\geq\mathbb{P}[G(n,q)\in{A}]$, because $A$ is a monotone \textbf{increasing} property. But then $\mathbb{P}[G(n,kp)\notin{A}]\leq\mathbb{P}[G(n,q)\notin{A}]=(\mathbb{P}[G(n,p)\notin{A}])^k$.
 \section{}
 \section{}
 \section{}

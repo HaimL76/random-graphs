@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  15 SEP 2025 20:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  16 SEP 2025 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -189,17 +189,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/isila/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 82--90
-
- []
-
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 94--102
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Overfull \hbox (43.63887pt too wide) detected at line 100
+Overfull \hbox (43.63887pt too wide) detected at line 112
 \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 ) []\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cm
 m/m/it/10 T[]\OT1/cmr/m/n/10 ] = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/
 10 T\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\
@@ -208,17 +209,17 @@ OT1/cmr/m/n/10 ) []] [] [] [] \OML/cmm/m/it/10 e[]O\OT1/cmr/m/n/10 (\U/msb/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 152--156
 
  []
 
-[5] [6] [7]
-Overfull \hbox (11.93832pt too wide) detected at line 223
+[6] [7] [8]
+Overfull \hbox (11.93832pt too wide) detected at line 235
 [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^X [] \
 U/msa/m/n/10 ^^O \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ \OML/cm
 m/m/it/10 '[]\OT1/cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m
@@ -228,7 +229,7 @@ m/m/it/10 '[]\OT1/cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m
 10 ]
  []
 
-[8] (random-graphs.aux)
+[9] (random-graphs.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2024-01-04>
@@ -260,9 +261,9 @@ msfonts/cm/cmsy10.pfb><C:/Users/isila/AppData/Local/Programs/MiKTeX/fonts/type1
 ts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/isila/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/isila/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on random-graphs.pdf (8 pages, 213909 bytes).
+Output written on random-graphs.pdf (9 pages, 218180 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
