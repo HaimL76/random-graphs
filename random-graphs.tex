@@ -37,6 +37,18 @@ Let $0\leq{q}\leq{1}$ be a probability s.t. $1-q=(1-p)^k$, by staged exposure it
 because all distinct copies of $G(n,p)$ are independent.
 
 But $1-kp\leq(1-p)^k=1-q\Rightarrow{kp\geq{q}}\Rightarrow\mathbb{P}[G(n,kp)\in{A}]\geq\mathbb{P}[G(n,q)\in{A}]$, because $A$ is a monotone \textbf{increasing} property. But then $\mathbb{P}[G(n,kp)\notin{A}]\leq\mathbb{P}[G(n,q)\notin{A}]=(\mathbb{P}[G(n,p)\notin{A}])^k$.
+\subsection{}
+$\omega\rightarrow\infty$, s.t. $\omega=o(n)$.
+
+$\Rightarrow\forall{n>0}$, denote $\omega=\omega(n)$, there exists some $k$, s.t. 
+\[k\leq\omega<k+1\Rightarrow{k}p^\ast\leq\omega{p^\ast}<(k+1)p^\ast\Rightarrow\]\[\Rightarrow\mathbb{P}[G(n,kp^\ast)\in{A}]\leq\mathbb{P}[G(n,\omega{p^\ast})\in{A}]\leq\mathbb{P}[G(n,(k+1)p^\ast)\in{A}]\Rightarrow\]\[\Rightarrow\mathbb{P}[G(n,(k+1)p^\ast)\notin{A}]\leq\mathbb{P}[G(n,\omega{p^\ast})\notin{A}]\leq\mathbb{P}[G(n,kp^\ast)\notin{A}],\] because $A$ is a monotone \textbf{increasing} property.
+
+But, 
+\[\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq(\mathbb{P}[G(n,p^\ast)\notin{A}])^k=(1-\mathbb{P}[G(n,p^\ast)\in{A}])^k=\frac{1}{2^k}.\]
+Thus, 
+\[0\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\frac{1}{2^k}=0\Rightarrow\]\[\Rightarrow\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\in{A}]\geq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\in{A}]=1.\]
+But then, by the Sandwich theorem, 
+\[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\omega(n)p^\ast)\in{A}].\]
 \section{}
 \section{}
 \section{}
