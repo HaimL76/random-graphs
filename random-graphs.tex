@@ -49,7 +49,50 @@ Thus,
 \[0\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\frac{1}{2^k}=0\Rightarrow\]\[\Rightarrow\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\in{A}]\geq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\in{A}]=1.\]
 But then, by the Sandwich theorem, 
 \[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\omega(n)p^\ast)\in{A}].\]
+
+Also, $k\leq\omega<k+1\Rightarrow\frac{1}{k+1}<\frac{1}{\omega}\leq\frac{1}{k}\Rightarrow\frac{p^\ast}{k+1}<\frac{p^\ast}{\omega}\leq\frac{p^\ast}{k}$.
+But,
+$\frac{p^\ast}{k+1}\geq{0}$, and $\frac{p^\ast}{k}\leq\frac{1}{k}\Rightarrow\lim_{k\rightarrow\infty}\frac{1}{k}=0$, then by the Sandwich theorem, also $\lim_{n\rightarrow\infty}\frac{p^\ast}{\omega(n)}=0$, but then,
+\[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\frac{p^\ast}{\omega(n)})\in{A}]=\lim_{p\rightarrow{0}}\mathbb{P}[G(n,p)\in{A}]=0,\]
+because $\mathbb{P}[G(n,p)\in{A}]$ is continuous in $[0,1]$, and $\mathbb{P}[G(n,0)\in{A}]=0$.
 \section{}
+A graph process is identical to the model $G(n,m)$, as proved in class, so to prove the given claim, we shall use the $G(n,p)$ model, and then translate everything to $G(n,m)$. The proofs for the claims we are using shall be given \textbf{briefly}, because they can be found in textbooks class notes.
+
+First, we observe that there is threshold for having a triangle in a random $G(n,p)$ graph. Let $X$ be the number of triangles in $G\sim{G(n,p)}$, for which we calculate the expectation, $\mathbb{E}[X]=\binom{n}{3}p^3=\frac{n(n-1)n-2)}{3!}p^3$, that is, all the choices of $3$ vertices in $G$, together with the probability for each choice of $3$ vertices to form a triangle. For any $p=p(n)$ s.t. $\mathbb{E}[X]\approx\frac{(np)^3}{6}\rightarrow{0}$ as $n\rightarrow\infty$, we get by Markov inequality that $\mathbb{P}[X\geq{1}]\leq\frac{\mathbb{E}[X]}{1}\rightarrow{0}$. But for $p(n)=\frac{c\log{n}}{n}$, where $c>0$ is some small constant, we get $\mathbb{E}[X]=\frac{n^3}{6}\cdot\frac{(c\log{n})^3}{n^3}=\frac{c^3(\log{n})^3}{6}\rightarrow\infty$ as $n\rightarrow\infty$, so the expectation $\mathbb{E}[X]$ itself is not enough. We calculate the expectation $\mathbb{E}[X^2]$. But 
+\[X^2=\sum_{i,j=1}^{N_3}[T_i,T_j\in{G}],\]
+where $N_3=\binom{n}{3}$ is the number of possible triangles (choices of $3$ vertices) in $G$.
+
+This splits into several distinct options for joint edges. For $0$ joint edges, the expectation (we denote $\mathbb{E}[X_0^2]$) to find independently $T_i$ then $T_j$ is the number of choices of $3$ out of $n$ vertices, multiplied by the probability for these chosen vertices to share a triangle, then the number of choices of $3$ out of $n-3$ vertices, multiplied by the same probability as before, so in this case $\mathbb{E}[X_0^2]=\binom{n}{3}\binom{n-3}{3}p^6\approx\frac{(np)^6}{36}$, but checking the other options, we get that the expectation for $1,2,3$ joint edges is $\mathbb{E}[X_1^2]\approx{n^5p^6}$, $\mathbb{E}[X_2^2]\approx{n^4p^5}$ and $\mathbb{E}[X_3^2]\approx{n^3p^3}$, respectively, hence the total expectation, which is a sum, because these different options are distinct events, remains $\mathbb{E}[X^2]\approx(np)^6+o((np)^6)$.
+
+We use a second-moment method, saying that \[\mathbb{P}[X>0]\geq\frac{(\mathbb{E}[X])^2}{\mathbb{P}[X^2]}\approx\frac{((np)^3)^2}{(np)^6+o((np)^6)}=\]\[=\frac{(np)^6}{(np)^6+o((np)^6)}\approx{1-o((np)^6)}\rightarrow{1},\]
+as $n\rightarrow\infty$.
+Thus, $\frac{c\log{n}}{n}$ is a threshold for having a triangle in $G$, for any small constant $c$.
+
+Now, we calculate the threshold for $G$ to be connected. But this reduces to the threshold of not having isolated vertices in $G$ (takes some work to show this).
+
+Let $X$ be the number of isolated vertices in $G$. 
+
+A specific vertex $v_0$ is isolated if there is no edge between $v_0$ and the other $n-1$ vertices, the probability for this is $(1-p)^{n-1}$, and it is the same for every vertex in $G$, hence $\mathbb{E}[X]=n(1-p)^{n-1}$.
+
+For the same $p(n)=\frac{c\log{n}}{n}$, we get 
+\[n(1-p)^{n-1}=n(1-\frac{c\log{n}}{n})^{n-1}\rightarrow{n}e^{-c\log{n}},\]
+as $n\rightarrow\infty$.
+But $ne^{-c\log{n}}=e^{\log{n}(1-c)}=n^{1-c}$, and for any $0<{c}<1$, $n^{1-c}\rightarrow\infty$, as $n\rightarrow\infty$.
+
+$\Rightarrow\mathbb{E}[X]\rightarrow\infty$, for $p=\frac{c\log{n}}{n}$, as $n\rightarrow\infty$, but the expectation itself is not enough. Again, we calculate $\mathbb{E}[X^2]$, but that means the expectation for $X_j$ isolated vertices when we have $X_i$ isolated vertices, but this breaks into two distinct events, when we count the same vertex $v_i$ twice, hence $\mathbb{E}[X_i^2]=\mathbb{E}[X]=n(1-p)^{n-1}$, and when the two vertices $v_i,v_j$ are distinct, hence $\mathbb{E}[X_iX_j]=n(1-p)^{n-1}(n-1)(1-p)^{n-2}$, because after we have $v_i$ isolated, then for $v_j$ to be isolated we have only $n-2$ other vertices that must not be adjacent to $v_j$ (because $v_i$ is already given as isolated).
+
+\[\Rightarrow\mathbb{E}[X^2]=n(1-p)^{n-1}+n(n-1)(1-p)^{2n-3}\Rightarrow\]\[\Rightarrow{Var(X)=\mathbb{E}[X^2]-\mathbb{E}[X]^2}=\]\[=n(1-p)^{n-1}+n(n-1)(1-p)^{2n-3}-[(n(1-p)^{n-1}]^2=\]\[=n(1-p)^{n-1}+n(1-p)^{2n-3}(np-1).\]
+Thus, by Chebyshev inequality,
+
+$\mathbb{P}[X=0]\leq\mathbb{P}[|X-\mathbb{E}[X]|\geq\mathbb{E}[X]]\leq\frac{Var(X)}{\mathbb{E}[X]^2}=\frac{1}{\mathbb{E}[X]}+\frac{np-1}{n(1-p)}$. 
+
+But $\mathbb{E}[X]\rightarrow\infty\Rightarrow\frac{1}{\mathbb{E}[X]}\rightarrow{0}\Rightarrow\mathbb{P}[X=0]\leq\frac{np-1}{n(1-p)}\leq\frac{p}{1-p}$.
+
+But $p=\frac{c\log{n}}{n}\rightarrow{0}$ as $n\rightarrow\infty$, for any constant $c$, hence, 
+\[\lim_{n\rightarrow\infty}\mathbb{P}[X=0]=0\Rightarrow\lim_{n\rightarrow\infty}\mathbb{P}[X>0]=1.\]
+Thus, for any small constant $c>0$, a.a.s there exists at least one isolated vertex, that is, $G$ is not connected.
+Thus, in conclusion, the probability $p=p(n)=\frac{c\log{n}}{n}$, where $c>0$ is any small constant, $p(n)$ is a threshold for $G$ to have at least one triangle, and a threshold for $G$ to have at least one isolated vertex (so not connected), and because $G(n,m)$ assumes the thresholds from $G(n,p)$, through the relation $m\approx\binom{n}{2}p$, we get that $m\approx\binom{n}{2}p(n)=\binom{n}{2}\frac{c\log{n}}{n}=\frac{cn(n-1)\log{n}}{2n}=\frac{c}{2}(n-1)\log{n}\rightarrow\infty$, as $n\rightarrow\infty$.
+Thus, we get that a.a.s the graph process has at least one triangle before it is connected.
 \section{}
 \section{}
 \subsection{}
