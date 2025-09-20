@@ -94,7 +94,19 @@ Thus, for any small constant $c>0$, a.a.s there exists at least one isolated ver
 Thus, in conclusion, the probability $p=p(n)=\frac{c\log{n}}{n}$, where $c>0$ is any small constant, $p(n)$ is a threshold for $G$ to have at least one triangle, and a threshold for $G$ to have at least one isolated vertex (so not connected), and because $G(n,m)$ assumes the thresholds from $G(n,p)$, through the relation $m\approx\binom{n}{2}p$, we get that $m\approx\binom{n}{2}p(n)=\binom{n}{2}\frac{c\log{n}}{n}=\frac{cn(n-1)\log{n}}{2n}=\frac{c}{2}(n-1)\log{n}\rightarrow\infty$, as $n\rightarrow\infty$.
 Thus, we get that a.a.s the graph process has at least one triangle before it is connected.
 \section{}
-If a graph is planar, then $G$ is $5$-degenerate. We say that $G$ is $k$-degenerate, if for every permutation $\sigma$ of the graph $n$ vertices, each vertex $\sigma(i)$ can be adjacent with no more than $k$ distinct vertices $\sigma(j)$, s.t. $\sigma(j)>\sigma(i)$. But then $G$ has no more than $kn$ in our case $5n$ possible edges. Hence, the number of choices of $m$ edges out of $5n$ possible edges if $\binom{5n}{m}$, and there are $n!$ permutations on $n$, that is, we have $n!\binom{5n}{m}$ choices for $G$. Thus, the probabiity to have $G\sim{G(n,m)}$ a $5$-degenerate graph is $p^\ast=\frac{n!\binom{5n}{m}}{\binom{N}{m}}$.
+If a graph is planar, then $G$ is $5$-degenerate. We say that $G$ is $k$-degenerate, if for every permutation $\sigma$ of the graph $n$ vertices, each vertex $\sigma(i)$ can be adjacent with no more than $k$ distinct vertices $\sigma(j)$, s.t. $\sigma(j)>\sigma(i)$. But then $G$ has no more than $kn$ in our case $5n$ possible edges. Hence, the number of choices of $m$ edges out of $5n$ possible edges if $\binom{5n}{m}$, and there are $n!$ permutations on $n$, that is, we have $n!\binom{5n}{m}$ choices for $G$. Thus, the probabiity to have $G\sim{G(n,m)}$ a $5$-degenerate graph is $p^\ast=\frac{n!\binom{5n}{m}}{\binom{N}{m}}$, where $N=\binom{n}{2}$.
+
+But $p^\ast=\frac{n!\binom{5n}{m}}{\binom{N}{m}}=n!\frac{5n(5n-1)(5n-2)\cdots(5n-m+1)}{N(N-1)(N-2)\cdots(N-m+1)}$.
+
+We claim that $N\geq5n$, starting from some $n_0$, and we check,
+
+Assume that $\binom{n_0}{2}=\frac{n_0(n_0-1)}{2}\geq5n_0\Rightarrow{n_0-1\geq10\Rightarrow{n_0\geq11}}$.
+
+Hence, for every $n\geq11$,
+
+$\frac{5n-k}{N-k}\leq\frac{5n-(k+1)}{N-(k+1)}$, for every $0\leq{k}\leq{m-1}$ 
+
+(because $5nN-kN-N-5nk+k^2+k\leq5nN-5nk-5n-kN+k^2+k$, for $N\geq5n$).
 \section{}
 \subsection{}
 For $n$ vertices, we have $n!$ permutations, but Hamilton cycles are indifferent to the starting point (since they are \textbf{cycles}), hence we divide the number of permutations by the number of starting points for each cycle, that is $n$. Hamilton cycles are also indifferent to direction, hence we divide this count by $2$ and we get $\frac{(n-1)!}{2}$. For each permutation $\sigma$ of the $n$ vertices, each edge in $\mu(F)$ comes from an edge between two vertices in the consecutive layers of $W$ ordered by $\sigma$, but that is $d$ choices of vertices from layers $\sigma(1),\sigma(2)$, then $d-1$ choices of the remaining vertices from layer $\sigma(k)$ together with $d$ choices of vertices from layer $\sigma(k+1)$, for every $2\leq{k}\leq{n-1}$, then $d-1$ choices of the remaining vertices from layers $\sigma(n),\sigma(1)$, but because all the choices are independent, we have $d^2(d(d-1))^{n-2}(d-1)^2=(d(d-1))^n$ choices.
