@@ -265,6 +265,26 @@ $\varphi(x)=\exists{y,z}$ . $x\sim{y}\land{y\sim{z}}\land{z\sim{x}}$
 
 Denote $U:=\{u\in{V}\,|\,{G\vDash\varphi(u)}\}$, then for every $x$, either $x\in{U}$ or $x\notin{U}$.
 \subsection{}
+$G=(V,E)=([n],E)$, where $n=\infty$.
+
+We define a first order language sentence, with $v,y,z,x_1,x_2,\dots,x_k$ distinct,
+\[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}\neg(x_i\sim{x_{i+1}})\bigvee_{i=1}^{k}x_i\sim{v}.\]
+This sentence says that any path of length $k$ between $y$ and $z$ must pass through $v$.
+
+Suppose that there exists $\varphi(v)$ a first order language, defined as $\varphi(v)=$\textbf{v is a cut vertex}.
+
+We define a theory $T$,
+\begin{enumerate}
+    \item $\exists{y,z}\,.\,\neg(y=v)\land\neg(z=v)\land\neg(y=z)\land{y\sim{v}}\land{z\sim{v}}\land\neg(y\sim{z})$.
+    \item 
+    $\bigwedge_{k=1}^\infty\theta_k(v,y,z)$.
+    \item 
+    $\neg\varphi(v)$.
+\end{enumerate}
+
+This theory is infinite, because $n=\infty$. But by the compactness theorem, $T$ is satisfiable is and only if every finite subset $S\subset{T}$ is satisfiable.
+Then take some arbitrary integer $m>0$, and define $T_m\subset{T}$ with all the sentences, except that we take $\bigwedge_{k=1}^m\theta_k(v,y,z)$ instead of the infinite $\bigwedge$.
+But then we simply build a graph $G_m=([n],E)$, with two distinct vertices that are adjacent to $v$ and there exists a path of length $m+1$ between $y$ and $z$, but there are no paths of length $\leq{m}$, hence $T_m$ is satisfiable but $T$ is not, in contradiction to the compactness theorem.
 \subsection{}
 The empty set can be defined by the following first order formula,
 
