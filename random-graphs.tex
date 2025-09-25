@@ -2,6 +2,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{xfrac}
 
 \title{random-graphs}
 \author{haiml76 }
@@ -131,33 +132,18 @@ Thus, for $m=(1+\epsilon)n$, the limit probability for $G$ to be $5$-degenerate 
 \section{}
 \subsection{}
 For $n$ vertices, we have $n!$ permutations, but Hamilton cycles are indifferent to the starting point (since they are \textbf{cycles}), hence we divide the number of permutations by the number of starting points for each cycle, that is $n$. Hamilton cycles are also indifferent to direction, hence we divide this count by $2$ and we get $\frac{(n-1)!}{2}$. For each permutation $\sigma$ of the $n$ vertices, each edge in $\mu(F)$ comes from an edge between two vertices in the consecutive layers of $W$ ordered by $\sigma$, but that is $d$ choices of vertices from layers $\sigma(1),\sigma(2)$, then $d-1$ choices of the remaining vertices from layer $\sigma(k)$ together with $d$ choices of vertices from layer $\sigma(k+1)$, for every $2\leq{k}\leq{n-1}$, then $d-1$ choices of the remaining vertices from layers $\sigma(n),\sigma(1)$, but because all the choices are independent, we have $d^2(d(d-1))^{n-2}(d-1)^2=(d(d-1))^n$ choices.
-\section*{4}
-\subsection*{4.a}
 
-The number of possible Hamilton circles in a multi-graph with $n$ vertices is: $(n-1)!/2$.
-(There are $n!$ ways to arrange n vertices. We need to divide by $n$ because of radial symmetry. We need to divide by 2 because the direction doesn't matter.)
-To get such a circle in $\mu(F)$ we need $F$ to connect between the $n$ layers of $W$. In order to connect the first two layers we need to choose from $d$ points of the first and $d$ points of the second layer. To connect the second to the third, we need to choose from $d-1$ points of the second layer and $d$ points of the third, etc. In each layer of the $n$ layers we choose two points, Therefore, there are $(d(d-1))^n$ ways to build each circle.\\
-Now we need to calculate the probability that the indicator telling that $F$ having these connections equals 1.
-Since $F$ is built from uniform distribution, all we need to do is to calculate the ratio between the number of matchings containing the links we need and the total number of matchings. 
-The total number of matchings is: $\frac{(nd)!}{2^{nd/2}(nd/2)!}$.\\
-(We need to choose all $nd$ points. we divide by $2^{nd/2}$ because there are $nd/2$ pairs. We divide by $(nd/2)!$ because the inner order of the pairs doesn't matter.)\\
-The number of matchings that contain the links we need is: $\frac{(n(d-2))!}{2^{n(d-2)/2}(n(d-2)/2)!}$. \\
-(Here there are only $d-2$ points to pair in each layer.)\\
-Overall:
+We calculate the number of choices for constructing $F$ s.t. $\mu(F)$ is Hamiltonian, and the total number of choices for constructing $F$.
 
-\begin{align*}
-\mathbb{E}[H] 
-  &= \sum_{\text{every possible Hamilton circle}}
-      \mathbb{E}\!\left[ \mathbf{1}_{\{\text{the circle is in }\mu(F)\}} \right] \\[6pt]
-  &= \frac{(n-1)!}{2}(d(d-1))^n
-      \frac{\tfrac{(n(d-2))!}{2^{n(d-2)/2}(n(d-2)/2)!}}
-           {\tfrac{(nd)!}{2^{nd/2}(nd/2)!}} \\[6pt]
-  &= \frac{(n-1)!}{2}(d(d-1))^n
-      \frac{(n(d-2))! \, 2^{nd/2}(nd/2)!}
-           {(nd)! \, 2^{n(d-2)/2}(n(d-2)/2)!}
-\end{align*}
-\hfill $\square$
+Denote by $m$ the number of available vertices, for both constructions, we need to choose $\frac{m}{2}$ pairs out of $m$ vertices, that is $\frac{m!}{2^{\sfrac{m}{2}}}$, but the order between the pairs is insignificant, hence we get $\frac{m!}{2^{\sfrac{m}{2}}(\sfrac{m}{2})!}$
 
+For the general construction we set $m=nd$, and for the Hamiltonian construction we set $m=n(d-2)$, because we already chose $2$ vertices of each of the $n$ layers. Thus, the probability to choose uniformly a Hamiltonian construction is $\frac{\frac{(n(d-2))!}{2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}}{\frac{(nd)!}{2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}}$, hence, multiplying these two results, we get \[
+\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{\frac{(n(d-2))!}{2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}}{\frac{(nd)!}{2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}}
+.\]
+Simplifying this expression, we get
+\[
+\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{(n(d-2))!2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}{(nd)!2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}
+.\]
 \subsection*{4.b}
 We will use Sterling's formula:
 \begin{align*}
