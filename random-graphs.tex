@@ -166,6 +166,16 @@ We will use Sterling's formula:
 \subsection*{4.c}
 
 \subsection*{4.d}
+We need to choose $n$ pairs our of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
+Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is $\binom{d}{2}^n$. Thus, the total number of choices is $\binom{d}{2}^n\frac{(2n)!}{n!2^n}$.
+
+We calculate the probability, using the number of choices for pairs that we found earlier, that is $\frac{m!}{\frac{m}{2}!2^{\frac{m}{2}}}$, where $m$ is the total number of vertices to choose from.
+
+For the total number of configurations we set $m=nd$, and for the number of configurations that can construct a $2$-factor we set $m=n(d-2)$, thus the probability is $
+\frac{\frac{(n(d-2))!}{(\frac{n(d-2)}{2})!2^{\frac{n(d-2)}{2}}}}{\frac{(nd)!}{(\frac{nd}{2})!2^{\frac{nd}{2}}}}=\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
+
+Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
+
 The number of 2-factors in the multi-graph is bounded by: $\frac{(2n)!}{n!2^n}$.\\
 (There are $2n$ points to arrange, 2 from each layer to get a 2-regular subgraph. We divide by $n!$ because the order of pairing doesn't matter. we divide by $2^n$ because the inner order doesn't matter. This is only a boundary because we allow to choose two points from the same layer (plus, we might have multi edges).)\\
 The number of ways we can build each 2-factor is: $\binom{d}{2}^n$.\\
