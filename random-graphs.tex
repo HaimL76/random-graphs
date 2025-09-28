@@ -160,7 +160,9 @@ By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence
 \subsection*{4.c}
 
 \subsection*{4.d}
-We need to choose $n$ pairs our of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
+The following construction shows the number of choices to construct all $2$-factors, along with graphs that are not simple $2$-factors (for instance, graphs that have multiple edges), and hence, the total number of choices that we hereby calculate is an upper bound of the number of choices for $2$-factors.
+
+We need to choose $n$ pairs out of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
 Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is $\binom{d}{2}^n$. Thus, the total number of choices is at most $\binom{d}{2}^n\frac{(2n)!}{n!2^n}$.
 
 We calculate the probability, using the number of choices for pairs that we found earlier, that is $\frac{m!}{\frac{m}{2}!2^{\frac{m}{2}}}$, where $m$ is the total number of vertices to choose from.
