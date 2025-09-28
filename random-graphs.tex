@@ -173,7 +173,8 @@ For the total number of configurations we set $m=nd$, and for the number of conf
 Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
 
 \subsection*{4.e}
-Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S$ the number of simple graphs of the form $\mu(F)$, then the expectation $\mathbb{E}[T_d]=\mathbb{E}[T|S]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[S]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])$.
+Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S$ the number of simple graphs of the form $\mu(F)$, then the expectation 
+\[\mathbb{E}[T_d]=\mathbb{E}[T|S]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[S]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T]).\]
 
 But by Markov inequality,
 
@@ -184,17 +185,6 @@ But $f=O(\mathbb{E}[T])$ means that asymptotically, $|f|\leq{c\mathbb{E}[T]}$, f
 \[
 \Rightarrow\lim_{n\rightarrow\infty}\mathbb{P}[T_d<n\mathbb{E}[T]]=1-\lim_{n\rightarrow\infty}\mathbb{P}[T_d\geq{n\mathbb{E}[T]}]=1
 \]
-
-Let $T_G$ be the random variable counting the 2-factors of a n-vertices d-regular graph $G$. Notice that every multi-graph without loops and multi-edges i.e. simple made by the configuration model is a d-regular graph. Therefore, $T_G = T | \, \mu(F) \, \text{is simple}$.\\
-\[
-\Longrightarrow{} \mathbb{E}[T_G]=\mathbb{E}[T | \, \mu(F) \, \text{is simple}]\underset{\text{total expectation}}{\leq} \frac{\mathbb{E}[T]}{\mathbb{P}(\mu(F) \, \text{is simple})}\underset{\substack{\text{shown in } \\ \text{the lecture}}}{= }e^{\tfrac{d^2-1}{4}} O(\mathbb{E}[T])
-\]
-Now we can use Markov's inequality:\\
-\[
-\mathbb{P}(T_G>n\mathbb{E}[T])\leq\frac{\mathbb{E}[T_G]}{n\mathbb{E}[T]}=\frac{e^{\tfrac{d^2-1}{4}} O(\mathbb{E}[T])}{n\mathbb{E}[T]} \leq \frac{c}{n}\xrightarrow{n \to \infty}0
-\]
-Therefore, a.a.s $T_G<n\mathbb{E}[T]$.\\
-\text{                                        }\hfill $\square$
 
 \subsection*{4.f}
 We use $T_d$ from earlier, and we denote $H_d$ the number of Hamilton cycles in a random $d$-regular graph. 
