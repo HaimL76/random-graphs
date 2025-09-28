@@ -172,20 +172,6 @@ For the total number of configurations we set $m=nd$, and for the number of conf
 
 Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
 
-The number of 2-factors in the multi-graph is bounded by: $\frac{(2n)!}{n!2^n}$.\\
-(There are $2n$ points to arrange, 2 from each layer to get a 2-regular subgraph. We divide by $n!$ because the order of pairing doesn't matter. we divide by $2^n$ because the inner order doesn't matter. This is only a boundary because we allow to choose two points from the same layer (plus, we might have multi edges).)\\
-The number of ways we can build each 2-factor is: $\binom{d}{2}^n$.\\
-(We need to choose twice from each layer)\\
-As in (a), we need to calculate the probability that $F$ has the needed matchings.\\
-The number of possible configurations is: $\frac{(nd)!}{(\tfrac{nd}{2})!2^{\tfrac{nd}{2}}}$\\
-The number of configurations which contain the needed matchings for a certain 2-factor is: $\frac{(n(d-2))!}{(\tfrac{n(d-2)}{2})!2^{\tfrac{n(d-2)}{2}}}$\\
-The probability we are looking for is the ratio of the last two. Overall:\\
-\begin{align*}
-\mathbb{E}[T] 
-  &\leq \binom{d}{2}^n\cdot \frac{(2n)!}{n!2^n} \cdot \frac{(n(d-2))!(\tfrac{nd}{2})!2^{\tfrac{nd}{2}}}{(\tfrac{n(d-2)}{2})!2^{\tfrac{n(d-2)}{2}}(nd)!}
-\end{align*}
-\hfill $\square$
-
 \subsection*{4.e}
 Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S$ the number of simple graphs of the form $\mu(F)$, then the expectation $\mathbb{E}[T_d]=\mathbb{E}[T|S]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[S]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])$.
 
