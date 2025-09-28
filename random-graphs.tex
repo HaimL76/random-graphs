@@ -160,7 +160,7 @@ By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence
 \subsection*{4.c}
 
 \subsection*{4.d}
-The following construction shows the number of choices to construct all $2$-factors, along with graphs that are not simple $2$-factors (for instance, graphs that have multiple edges), and hence, the total number of choices that we hereby calculate is an upper bound of the number of choices for $2$-factors.
+The following calculation shows the number of choices to construct all $2$-factors, along with constructions that are not $2$-factors, and hence it is an \textbf{upper bound} for the desired number of choices.
 
 We need to choose $n$ pairs out of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
 Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is $\binom{d}{2}^n$. Thus, the total number of choices is at most $\binom{d}{2}^n\frac{(2n)!}{n!2^n}$.
