@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  28 SEP 2025 01:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  28 SEP 2025 23:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -228,17 +228,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/isila/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
 [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 179--187
+Overfull \hbox (16.22597pt too wide) detected at line 156
+ \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 2[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 
+e[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 n[]  \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 d \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2)[] \OMS/cmsy/m/
+n/10 ^^A \OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--181
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Overfull \hbox (43.63887pt too wide) detected at line 197
+Overfull \hbox (43.63887pt too wide) detected at line 203
 \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 ) []\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cm
 m/m/it/10 T[]\OT1/cmr/m/n/10 ] = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/
 10 T\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\
@@ -247,17 +255,30 @@ OT1/cmr/m/n/10 ) []] [] [] [] \OML/cmm/m/it/10 e[]O\OT1/cmr/m/n/10 (\U/msb/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
+
+Overfull \hbox (21.3298pt too wide) detected at line 228
+\OMS/cmsy/m/n/10 ) [] ^^U [] ^^U []  ^^U [] \OT1/cmr/m/n/10 =
+ []
+
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 237--241
+Overfull \hbox (5.19333pt too wide) detected at line 238
+\OT1/cmr/m/n/10 = [] = [] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 2[] \OMS/cmsy/m/
+n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] ^^Y [] ^^A \OT1/cmr/m/n/1
+0 2[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cm
+r/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--247
 
  []
 
 [9] [10] [11]
-Overfull \hbox (6.32721pt too wide) detected at line 340
+Overfull \hbox (6.32721pt too wide) detected at line 353
 [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^X [] \
 U/msa/m/n/10 ^^O \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ []\OT1/
 cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy
@@ -280,7 +301,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3149 strings out of 474486
  55266 string characters out of 5743755
- 1948528 words of memory out of 5000000
+ 1946528 words of memory out of 5000000
  25414 multiletter control sequences out of 15000+600000
  569802 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -305,7 +326,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/isila/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/isi
 la/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 
-Output written on random-graphs.pdf (12 pages, 246521 bytes).
+Output written on random-graphs.pdf (12 pages, 249654 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

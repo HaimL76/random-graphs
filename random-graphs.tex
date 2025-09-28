@@ -145,29 +145,23 @@ Simplifying this expression, we get
 \mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{(n(d-2))!2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}{(nd)!2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}
 .\]
 \subsection*{4.b}
-We will use Sterling's formula:
-\begin{align*}
-\mathbb{E}[H] 
-&\approx \frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}
-    \cdot (d(d-1))^n \cdot \\[6pt]
-&\quad \cdot
-    \frac{\sqrt{2\pi n(d-2)}\left(\tfrac{n(d-2)}{e}\right)^{n(d-2)} \cdot 2^{nd/2}\cdot\sqrt{\pi nd}\cdot\left(\tfrac{nd/2}{e}\right)^{nd/2}}
-         {\sqrt{\pi nd/2}\left(\tfrac{n(d-2)/2}{e}\right)^{n(d-2)/2} \cdot 2^{nd/2}\cdot2^{-n}\cdot\sqrt{2\pi nd}\cdot\left(\tfrac{nd}{e}\right)^{nd}} \\[6pt]
-&= \frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n} \cdot (d(d-1))^n \cdot \\[6pt]
-&\quad \cdot 2^n \cdot e^{nd + \tfrac{n(d-2)}{2} - \tfrac{nd}{2} - n(d-2)} \cdot
-   n^{-nd - \tfrac{n(d-2)}{2} + \tfrac{nd}{2} + n(d-2)} \\
-&\quad \cdot (d-2)^{\tfrac{n(d-2)}{2}} \cdot d^{-nd/2}\cdot 2^{-n} \\[6pt]
-&= \frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n} \cdot (d(d-1))^n\cdot e^n \cdot n^{-n}
-    \cdot d^{-\tfrac{nd}{2}} \cdot (d-2)^{\,n(-1+\tfrac{d}{2})} \\[6pt]
-&= \sqrt{\frac{\pi}{2n}} \,(d-1)^n \, d^{\,n(1-\tfrac{d}{2})} \cdot (d-2)^{\,-n(1-\tfrac{d}{2})} \\[6pt]
-&\approx \sqrt{\frac{\pi}{2n}} \,\Big[(d-1)\,\left(\tfrac{d-2}{d}\right)^{\tfrac{d-2}{2}}\Big]^n.
-\end{align*} \hfill $\square$
-
+By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence 
+\[\mathbb{E}[H]\approx\frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}
+\cdot(d(d-1))^n\cdot\]\[
+\quad\cdot\frac{\sqrt{2\pi{n(d-2)}}\left(\tfrac{n(d-2)}{e}\right)^{n(d-2)}\cdot{2^{nd/2}}\cdot\sqrt{\pi nd}\cdot\left(\tfrac{nd/2}{e}\right)^{nd/2}}
+         {\sqrt{\pi nd/2}\left(\tfrac{n(d-2)/2}{e}\right)^{n(d-2)/2}\cdot 2^{nd/2}\cdot2^{-n}\cdot\sqrt{2\pi nd}\cdot\left(\tfrac{nd}{e}\right)^{nd}}
+=\]\[=\frac{\sqrt{2\pi{n}}\,\left(\tfrac{n}{e}\right)^n}{2n}\cdot(d(d-1))^n\cdot\]
+\[\quad\cdot2^n\cdot e^{nd+\tfrac{n(d-2)}{2}-\tfrac{nd}{2}-n(d-2)}\cdot{n}^{-nd- \tfrac{n(d-2)}{2}+\tfrac{nd}{2}+n(d-2)}
+\quad\cdot(d-2)^{\tfrac{n(d-2)}{2}} \cdot{d}^{-nd/2}\cdot{2^{-n}}
+=\]\[=\frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}\cdot(d(d-1))^n\cdot{e^n} \cdot{n^{-n}}
+    \cdot{d}^{-\tfrac{nd}{2}}\cdot(d-2)^{\,n(-1+\tfrac{d}{2})}
+=\]\[=\sqrt{\frac{\pi}{2n}}\,(d-1)^n\,d^{\,n(1-\tfrac{d}{2})}\cdot(d-2)^{\,-n(1-\tfrac{d}{2})}
+\approx\sqrt{\frac{\pi}{2n}}\,\Big[(d-1)\,\left(\tfrac{d-2}{d}\right)^{\tfrac{d-2}{2}}\Big]^n.\]
 \subsection*{4.c}
 
 \subsection*{4.d}
 We need to choose $n$ pairs our of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
-Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is $\binom{d}{2}^n$. Thus, the total number of choices is $\binom{d}{2}^n\frac{(2n)!}{n!2^n}$.
+Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is $\binom{d}{2}^n$. Thus, the total number of choices is at most $\binom{d}{2}^n\frac{(2n)!}{n!2^n}$.
 
 We calculate the probability, using the number of choices for pairs that we found earlier, that is $\frac{m!}{\frac{m}{2}!2^{\frac{m}{2}}}$, where $m$ is the total number of vertices to choose from.
 
@@ -191,6 +185,18 @@ The probability we are looking for is the ratio of the last two. Overall:\\
 \hfill $\square$
 
 \subsection*{4.e}
+Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S$ the number of simple graphs of the form $\mu(F)$, then the expectation $\mathbb{E}[T_d]=\mathbb{E}[T|S]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[S]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])$.
+
+But by Markov inequality,
+
+$\mathbb{P}[T_d\geq{n\mathbb{E}[T]}]\leq\frac{\mathbb{E}[T_d]}{n\mathbb{E}[T]}=\frac{e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])}{n\mathbb{E}[T]}$.
+
+But $f=O(\mathbb{E}[T])$ means that asymptotically, $|f|\leq{c\mathbb{E}[T]}$, for some constant $c$, hence, asymptotically $\frac{e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])}{n\mathbb{E}[T]}\leq\frac{c\mathbb{E}[T]}{n\mathbb{E}[T]}=\frac{c}{n}\rightarrow{0}$, as $n\rightarrow\infty$.
+
+\[
+\Rightarrow\lim_{n\rightarrow\infty}\mathbb{P}[T_d<n\mathbb{E}[T]]=1-\lim_{n\rightarrow\infty}\mathbb{P}[T_d\geq{n\mathbb{E}[T]}]=1
+\]
+
 Let $T_G$ be the random variable counting the 2-factors of a n-vertices d-regular graph $G$. Notice that every multi-graph without loops and multi-edges i.e. simple made by the configuration model is a d-regular graph. Therefore, $T_G = T | \, \mu(F) \, \text{is simple}$.\\
 \[
 \Longrightarrow{} \mathbb{E}[T_G]=\mathbb{E}[T | \, \mu(F) \, \text{is simple}]\underset{\text{total expectation}}{\leq} \frac{\mathbb{E}[T]}{\mathbb{P}(\mu(F) \, \text{is simple})}\underset{\substack{\text{shown in } \\ \text{the lecture}}}{= }e^{\tfrac{d^2-1}{4}} O(\mathbb{E}[T])
@@ -203,11 +209,14 @@ Therefore, a.a.s $T_G<n\mathbb{E}[T]$.\\
 \text{                                        }\hfill $\square$
 
 \subsection*{4.f}
-\begin{align*}
-\frac{\mathbb{E}[H_G]}{\mathbb{E}[T_G]}
-&\underset{\text{(c),(e)}}{\ge} 
+We use $T_d$ from earlier, and we denote $H_d$ the number of Hamilton cycles in a random $d$-regular graph. 
+
+We already saw that $\mathbb{E}[H_d]\geq\frac{\mathbb{E}[H]}{n}$ and that $\mathbb{E}[T_d]\leq{n\mathbb{E}[T]}$.
+
+\[\Rightarrow\frac{\mathbb{E}[H_d]}{\mathbb{E}[T_d]}\geq\frac{\mathbb{E}[H]}{2\mathbb{E}[T]}
+\geq
 \frac{\mathbb{E}[H]}{n^2 \mathbb{E}[T]} \\[2mm]
-&\ge 
+\geq
 \frac{
 \dfrac{(n-1)!}{2} (d(d-1))^n \cdot
 \dfrac{(n(d-2))! \, 2^{nd/2} (nd/2)!}{(nd)! \, 2^{n(d-2)/2} (n(d-2)/2)!}
@@ -215,23 +224,20 @@ Therefore, a.a.s $T_G<n\mathbb{E}[T]$.\\
 n^2 \cdot \binom{d}{2}^n \cdot 
 \dfrac{(2n)!}{n! 2^n} \cdot 
 \dfrac{(n(d-2))! (\tfrac{nd}{2})! 2^{nd/2}}{(\tfrac{n(d-2)}{2})! 2^{n(d-2)/2} (nd)!}
-} \\[2mm]
-&=
+}
+=\]\[=
 \frac{
 \dfrac{1}{2} (n-1)! (d(d-1))^n
 }{
 n^2 \cdot \dfrac{(d(d-1))^n}{2^n} \cdot \dfrac{(2n)!}{n! 2^n}
-}\\[2mm]
-&=\frac{1}{2}\cdot2^{2n}\cdot n^{-2}\cdot\frac{n!(n-1)!}{(2n)!
-}\\[2mm]
-&\approx\frac{1}{2}\cdot2^{2n}\cdot n^{-3}\cdot\frac{2\pi n(\frac{n}{e})^{2n}}{\sqrt{2\pi 2n}(\frac{2n}{e})^{2n}
-}\\[2mm]
-&=\frac{1}{2}\cdot2^{2n}\cdot2^{-2n}\cdot n^{-2.5}\sqrt{\pi
-}\\[2mm]
-&\ge\frac{1}{2} n^{-2.5}
-\end{align*}
-
-\hfill $\square$
+}
+=\frac{1}{2}\cdot2^{2n}\cdot n^{-2}\cdot\frac{n!(n-1)!}{(2n)!
+}
+\approx\frac{1}{2}\cdot2^{2n}\cdot n^{-3}\cdot\frac{2\pi n(\frac{n}{e})^{2n}}{\sqrt{2\pi 2n}(\frac{2n}{e})^{2n}
+}
+=\]\[=\frac{1}{2}\cdot2^{2n}\cdot2^{-2n}\cdot n^{-2.5}\sqrt{\pi
+}
+\geq\frac{1}{2} n^{-2.5}.\]
 
 \subsection*{4.g}
 We will use the construction from Tutte's paper. Let $G'$ be the new graph(for $f(a)=2\  \ \forall a \in V$).\\
@@ -290,11 +296,13 @@ But then we simply build a graph $G_m=([n],E)$, with two distinct vertices that 
 \subsection{}
 The empty set can be defined by the following first order formula,
 
-$\varphi_\phi(x)=x\neq{x}$, which is a contradiction, hence $U_\phi:=\{u\in{V}\,|\,{G\vDash\varphi_\phi(u)}\}=\phi$.
+$\varphi_\phi(x)=x\neq{x}$, which is a contradiction, hence 
+
+$U_\phi:=\{u\in{V}\,|\,{G\vDash\varphi_\phi(u)}\}=\phi$.
 
 The set of all graph vertices can be defined by the following first order formula,
 
-$\varphi(x)=x=x$, which is a tautology, hence $U_V:=\{u\in{V}\,|\,{G\vDash\varphi(u)}\}=V$.
+$\varphi_V(x)=x=x$, which is a tautology, hence $U_V:=\{u\in{V}\,|\,{G\vDash\varphi_V(u)}\}=V$.
 
 Both formulas are either true or false for all $v\in{V}$, therefore the sets that satisfy them are called the trivial definable sets.
 
@@ -308,7 +316,12 @@ Another version of $\tilde\varphi$,
 \noindent
 \[\tilde\varphi=\forall{0\leq{p}\leq{1}},\epsilon>0\,.\,\exists{N}\,.\,\forall{n>N},\varphi\,.\,\]\[.\,\neg(\exists{v,u\in{V}}\,.\,\varphi\neq\varphi_\phi\land\varphi\neq\varphi_V\land\mathbb{P}[G(n,p)\vDash\varphi(u)]\geq\epsilon\land\mathbb{P}[G(n,p)\neg\vDash\varphi(v)]\geq\epsilon)\]
 \subsection{}
-This should be immediate from Fagin's 0-1 law, but I shall describe my idea of a proof.
+This should be immediate from Fagin's 0-1 law, because it applies to every constant probability $0\leq{p}\leq{1}$, that is, for every constant $p$, and for every first order sentence $\varphi$,
+\[
+\lim_{n\rightarrow\infty}\mathbb{P}[G\sim{G(n,p)}\vDash\varphi]\in\{0,1\}\Rightarrow{U_\varphi\in\{\phi,V\}}.
+\]
+
+But I shall describe my idea of a proof.
 
 For every $x\in{V}$, a sentence $\varphi(x)$ is a finite set of statements which can contain a finite subset of the graph vertices $x_1,x_2\dots,x_k\in{V}$, for some $k<\infty$, the quantifiers $\exists,\forall$, the relations $=,\sim$, and the negation unary logical operator $\neg$. These statements are related to each other by the logical operators $\land,\lor$.
 
@@ -349,4 +362,5 @@ and,
 
 Suppose now that the additional element is another vertex $x_{m+1}$ in an existing expression of the form $\exists{x_1,x_2,\dots,x_m}$. But then we can express the new sentence as $\varphi\land\tilde\varphi=\varphi\land\exists{x_{m+1}}\,.\,\dots$
 Both $V_\varphi$ and $V_{\tilde\varphi}$ are trivial, by the assumption, hence $V_{\varphi\land\tilde\varphi}=V_\varphi\cap{V_{\tilde\varphi}}$ is also trivial.
+We can show further that every $m+1$ additional element is of the form $\varphi\land\tilde\varphi$ or $\varphi\lor\tilde\varphi$, and since $\varphi,\tilde\varphi$ have a limit probability of either $0$ or $1$, by the assumption, then $\varphi\land\tilde\varphi$ or $\varphi\lor\tilde\varphi$ have a limit probability of either $0$ or $1$.
 \end{document}
