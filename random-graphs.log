@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  29 SEP 2025 12:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  29 SEP 2025 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,12 +236,7 @@ n/10 ^^A \OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 =
  []
 
 [7]
-Overfull \hbox (21.3298pt too wide) detected at line 206
-\OMS/cmsy/m/n/10 ) [] ^^U [] ^^U []  ^^U [] \OT1/cmr/m/n/10 =
- []
-
-
-Overfull \hbox (5.19333pt too wide) detected at line 216
+Overfull \hbox (5.19333pt too wide) detected at line 215
 \OT1/cmr/m/n/10 = [] = [] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 2[] \OMS/cmsy/m/
 n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] ^^Y [] ^^A \OT1/cmr/m/n/1
 0 2[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cm
@@ -249,12 +244,12 @@ r/m/n/10 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--225
+Underfull \hbox (badness 10000) in paragraph at lines 220--224
 
  []
 
 [8] [9] [10]
-Overfull \hbox (6.32721pt too wide) detected at line 335
+Overfull \hbox (6.32721pt too wide) detected at line 334
 [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^X [] \
 U/msa/m/n/10 ^^O \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ []\OT1/
 cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy
@@ -302,7 +297,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/isila/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/isi
 la/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 
-Output written on random-graphs.pdf (12 pages, 245611 bytes).
+Output written on random-graphs.pdf (12 pages, 245590 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
