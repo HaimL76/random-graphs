@@ -223,11 +223,7 @@ Following the construction by Tutte, $\forall{v}\in{V}$, $f(v)=2$, and we constr
 
 by matching all $s(v)=d(v)-f(v)=d-2$ vertices of $Y(v)$ with $s(v)$ vertices in $X(v)$, while two vertices in $X(v)$ are left unmatched inside $St(v)$. Let $u\in{V}$ be a vertex in $G$, such that $(v,u)\in{E}$, then we add an edge in $G'$ between one of $X(v)$ unmatched vertices and one of $X(u)$ unmatched vertices, hence $E'$ is a union of all the edges between $X(v)$ and $Y(v)$, for every $v\in{V}$, and the edges connecting between the different $St(v)$ in $G'$.
 
-We find a perfect matching $M$ on $G'$, then $M$ is a spanning subgraph of $G'$ (because every vertex $v\in{V}$ must be an endpoint of only one edge from $G'$, hence $M$ spans all $G'$ vertices, and the number of edges in $M$ is less or equal to that of $G'$).
-
- Let $u\in{V}$ be another vertex, s.t. $v$ and $u$ are adjacent, then we match one of the unmatched vertices in $X(v)$ with one of the unmatched vertices in $X(u)$.
-
-
+We find a perfect matching $M$ of $G'$, that is, \textbf{every} vertex $m\in{M}$ must be an end of \textbf{one} edge only, hence $M$ is a $1$-factor, and by the lemma proved by Tutte, $G'$ has a $1$-factor if and only if $G$ has a $k$-factor, in our case $k=2$.
 \subsection*{4.h}
 phase 1: as in (g), we build $G'$, and use the perfect matching algorithm. We get a 2-factor on $G$.\\
 phase 2: in (f) we proved that the ratio between the number of the Hamilton circles to the number of 2-factors in a d-regular graph is at least $\frac{1}{2n^{2.5}}$ a.a.s.. Therefore if we repeat phase 1 at least $n^{3.5}$ times we have:
