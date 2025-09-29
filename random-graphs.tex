@@ -219,11 +219,13 @@ n^2 \cdot \dfrac{(d(d-1))^n}{2^n} \cdot \dfrac{(2n)!}{n! 2^n}
 \subsection*{4.g}
 $G=(V,E)$.
 
-Following the construction by Tutte, $\forall{v}\in{V}$, $f(v)=2$, and we construct $St(v)=X(v)\cup{Y}(v)$, where $X(v)$ has $d(v)$ distinct vertices and $Y(v)$ has $s(v)=d(v)-f(v)=d(v)-2$ distinct vertices, and we construct a new graph $G'=(V',E')$, s.t. \[V'=\bigcup_{v\in{V}}(X(v)\cup{Y}(v),\] 
+Following the construction by Tutte, $\forall{v}\in{V}$, $f=f(v)=2$, and we construct $St(v)=X(v)\cup{Y}(v)$, where $X(v)$ has $d(v)$ distinct vertices and $Y(v)$ has $s(v)=d(v)-f(v)=d(v)-2$ distinct vertices, and we construct a new graph $G'=(V',E')$, s.t. \[V'=\bigcup_{v\in{V}}(X(v)\cup{Y}(v),\] 
 
 by matching all $s(v)=d(v)-f(v)=d-2$ vertices of $Y(v)$ with $s(v)$ vertices in $X(v)$, while two vertices in $X(v)$ are left unmatched inside $St(v)$. Let $u\in{V}$ be a vertex in $G$, such that $(v,u)\in{E}$, then we add an edge in $G'$ between one of $X(v)$ unmatched vertices and one of $X(u)$ unmatched vertices, hence $E'$ is a union of all the edges between $X(v)$ and $Y(v)$, for every $v\in{V}$, and the edges connecting between the different $St(v)$ in $G'$.
 
-We find a perfect matching $M$ of $G'$, that is, \textbf{every} vertex $m\in{M}$ must be an end of \textbf{one} edge only, hence $M$ is a $1$-factor, and by the lemma proved by Tutte, $G'$ has a $1$-factor if and only if $G$ has a $k$-factor, in our case $k=2$.
+We find a perfect matching $M$ of $G'$, that is, \textbf{every} vertex $m\in{M}$ must be an end of \textbf{one} edge only, hence $M$ is a $1$-factor of $G'$, and by the lemma proved by Tutte, $G'$ has a $1$-factor if and only if $G$ has an $f$-factor, in our case $f=2$.
+
+For the proof (of the direction from $1$-factor to $f$-factor), denote by $v_1,v_2,\dots,v_f$ the vertices in each $X(v)$ that are not matched with vertices of $Y(v)$, for every $v\in{V}$. They must be ends of edges in $M$, and the only edges whose ends are these vertices, are the edges that connected the different $St(v)$ in $G'$, but each $St(v)$ is constructed from a vertex $v\in{V}$ in $G$, thus we found an $f$-factor in $G$, because every vertex $v\in{V}$ is an end of $f=f(v)$ edges.
 \subsection*{4.h}
 phase 1: as in (g), we build $G'$, and use the perfect matching algorithm. We get a 2-factor on $G$.\\
 phase 2: in (f) we proved that the ratio between the number of the Hamilton circles to the number of 2-factors in a d-regular graph is at least $\frac{1}{2n^{2.5}}$ a.a.s.. Therefore if we repeat phase 1 at least $n^{3.5}$ times we have:

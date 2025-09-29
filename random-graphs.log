@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  29 SEP 2025 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  29 SEP 2025 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -243,8 +243,15 @@ n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] ^^Y [] ^^A \OT1/cmr/m/n/1
 r/m/n/10 =
  []
 
-[8] [9] [10]
-Overfull \hbox (6.32721pt too wide) detected at line 330
+
+Overfull \hbox (11.30951pt too wide) in paragraph at lines 228--229
+[]\OT1/cmr/m/n/10 For the proof (of the di-rec-tion from $1$-factor to $\OML/cm
+m/m/it/10 f$\OT1/cmr/m/n/10 -factor), de-note by $\OML/cmm/m/it/10 v[]; v[]; []
+ ; v[]$
+ []
+
+[8] [9] [10] [11]
+Overfull \hbox (6.32721pt too wide) detected at line 332
 [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^X [] \
 U/msa/m/n/10 ^^O \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ []\OT1/
 cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy
@@ -253,7 +260,7 @@ m/n/10 ^^A [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/
 10 ^^X [] \U/msa/m/n/10 ^^O []\OT1/cmr/m/n/10 ]
  []
 
-[11] [12] (random-graphs.aux)
+[12] (random-graphs.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2024-01-04>
@@ -292,7 +299,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/isila/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/isi
 la/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 
-Output written on random-graphs.pdf (12 pages, 246435 bytes).
+Output written on random-graphs.pdf (12 pages, 247281 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
