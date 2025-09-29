@@ -217,16 +217,16 @@ n^2 \cdot \dfrac{(d(d-1))^n}{2^n} \cdot \dfrac{(2n)!}{n! 2^n}
 \geq\frac{1}{2} n^{-2.5}.\]
 
 \subsection*{4.g}
-We will use the construction from Tutte's paper. Let $G'$ be the new graph(for $f(a)=2\  \ \forall a \in V$).\\
-We will use the perfect matching algorithm on $G'$. The matched edges define a spanning subgraph of $G'$.
-Let $a \in V$, we check how do the vertices in $X(a)\cup Y(a)$ match.\\
-All the $s(a)$ vertices in $Y(a)$ have to be paired to vertices in $X(a)$, since they are connected only to vertices of $X(a)$ according to the construction. Now we need to check how many vertices of $X(a)$ are not paired to vertices from $Y(a)$:\\
-\[
-d(a)-s(a)=d(a)-(d(a)-f(a))=f(a)=2
-\]\\
-Therefore, there are exactly two vertices in $X(a)$ who are not connected to vertices of $St(a)$ (they cannot be matched together according to the construction).\\
-Therefore, there are two original edges of $G$ connecting $St(a)$ to two other stars. Since this is true for every single $a \in V$, all the edges together define a 2-factor on $G$.
-\hfill $\square$
+$G=(V,E)$.
+
+Following the construction by Tutte, $\forall{v}\in{V}$, $f(v)=2$, and we construct $St(v)=X(v)\cup{Y}(v)$, where $X(v)$ has $d(v)$ distinct vertices and $Y(v)$ has $s(v)=d(v)-f(v)=d(v)-2$ distinct vertices, and we construct a new graph $G'=(V',E')$, s.t. \[V'=\bigcup_{v\in{V}}(X(v)\cup{Y}(v),\] 
+
+by matching all $s(v)=d(v)-f(v)=d-2$ vertices of $Y(v)$ with $s(v)$ vertices in $X(v)$, while two vertices in $X(v)$ are left unmatched inside $St(v)$. Let $u\in{V}$ be a vertex in $G$, such that $(v,u)\in{E}$, then we add an edge in $G'$ between one of $X(v)$ unmatched vertices and one of $X(u)$ unmatched vertices, hence $E'$ is a union of all the edges between $X(v)$ and $Y(v)$, for every $v\in{V}$, and the edges connecting between the different $St(v)$ in $G'$.
+
+We find a perfect matching $M$ on $G'$, then $M$ is a spanning subgraph of $G'$ (because every vertex $v\in{V}$ must be an endpoint of only one edge from $G'$, hence $M$ spans all $G'$ vertices, and the number of edges in $M$ is less or equal to that of $G'$).
+
+ Let $u\in{V}$ be another vertex, s.t. $v$ and $u$ are adjacent, then we match one of the unmatched vertices in $X(v)$ with one of the unmatched vertices in $X(u)$.
+
 
 \subsection*{4.h}
 phase 1: as in (g), we build $G'$, and use the perfect matching algorithm. We get a 2-factor on $G$.\\
