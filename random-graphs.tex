@@ -173,8 +173,8 @@ For the total number of configurations we set $m=nd$, and for the number of conf
 Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
 
 \subsection*{4.e}
-Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S$ the number of simple graphs of the form $\mu(F)$, then the expectation 
-\[\mathbb{E}[T_d]=\mathbb{E}[T|S]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[S]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T]).\]
+Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S_d$ the set of simple $d$-regular graphs, then the expectation 
+\[\mathbb{E}[T_d]=\mathbb{E}[T|\mu(F)\in{S_d}]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[\mu(F)\in{S_d}]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T]).\]
 
 But by Markov inequality,
 
@@ -254,14 +254,18 @@ Denote $U:=\{u\in{V}\,|\,{G\vDash\varphi(u)}\}$, then for every $x$, either $x\i
 $G=(V,E)=([n],E)$, where $n=\infty$.
 
 We define a first order language sentence, with $v,y,z,x_1,x_2,\dots,x_k$ distinct,
-\[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}\neg(x_i\sim{x_{i+1}})\bigvee_{i=1}^{k-1}(x_i\sim{v}\land{v\sim{x_{i+1}}}).\]
-This sentence says that any path of length $k$ between $y$ and $z$ must pass through $v$.
+\[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}(x_i=v\lor{v}=x_{i+1}\lor\neg(x_i\sim{x_{i+1}})).\]
+This sentence says that for any given vertices $y,z$, there is no path between them that does not pass through $v$.
 
-Suppose that there exists $\varphi(v)$ a first order language, defined as $\varphi(v)=$\textbf{v is a cut vertex}.
+Suppose that there exists $\varphi(v)$ a first order sentence, defined as
+
+$\varphi(v)=$\textbf{v is a cut vertex}.
 
 We define a theory $T$,
+
+$\exists{y,z}\,.$
 \begin{enumerate}
-    \item $\exists{y,z}\,.\,\neg(y=v)\land\neg(z=v)\land\neg(y=z)\land{y\sim{v}}\land{z\sim{v}}\land\neg(y\sim{z})$.
+    \item $y\neq{v}\land{z}\neq{v}\land{y}\neq{z}\land{y\sim{v}}\land{z\sim{v}}\land\neg(y\sim{z})$.
     \item 
     $\bigwedge_{k=1}^\infty\theta_k(v,y,z)$.
     \item 
@@ -270,17 +274,17 @@ We define a theory $T$,
 
 This theory is infinite, because $n=\infty$. But by the compactness theorem, $T$ is satisfiable is and only if every finite subset $S\subset{T}$ is satisfiable.
 Then take some arbitrary integer $m>0$, and define $T_m\subset{T}$ with all the sentences, except that we take $\bigwedge_{k=1}^m\theta_k(v,y,z)$ instead of the infinite $\bigwedge$.
-But then we simply build a graph $G_m=([n],E)$, with two distinct vertices that are adjacent to $v$ and there exists a path of length $m+1$ between $y$ and $z$, but there are no paths of length $\leq{m}$, hence $T_m$ is satisfiable but $T$ is not, in contradiction to the compactness theorem.
+But then we simply construct a graph $G_m=([n],E)$, with two distinct vertices that are adjacent to $v$ and there exists a path of length $m+1$ between $y$ and $z$, but there are no paths of length $\leq{m}$, hence $T_m$ is satisfiable but $T$ is not, in contradiction to the compactness theorem.
 \subsection{}
 The empty set can be defined by the following first order formula,
 
-$\varphi_\phi(x)=x\neq{x}$, which is a contradiction, hence 
+$\varphi_1(x)=x\neq{x}$, which is a contradiction, hence 
 
-$U_\phi:=\{u\in{V}\,|\,{G\vDash\varphi_\phi(u)}\}=\phi$.
+$U_1:=\{u\in{V}\,|\,{G\vDash\varphi_1(u)}\}=\phi$.
 
 The set of all graph vertices can be defined by the following first order formula,
 
-$\varphi_V(x)=x=x$, which is a tautology, hence $U_V:=\{u\in{V}\,|\,{G\vDash\varphi_V(u)}\}=V$.
+$\varphi_2(x)=x=x$, which is a tautology, hence $U_2:=\{u\in{V}\,|\,{G\vDash\varphi_2(u)}\}=V$.
 
 Both formulas are either true or false for all $v\in{V}$, therefore the sets that satisfy them are called the trivial definable sets.
 
