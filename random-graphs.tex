@@ -61,9 +61,9 @@ $\frac{p^\ast}{k+1}\geq{0}$, and $\frac{p^\ast}{k}\leq\frac{1}{k}\Rightarrow\lim
 \[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\frac{p^\ast}{\omega(n)})\in{A}]=\lim_{p\rightarrow{0}}\mathbb{P}[G(n,p)\in{A}]=0,\]
 because $\mathbb{P}[G(n,p)\in{A}]$ is continuous in $[0,1]$, and $\mathbb{P}[G(n,0)\in{A}]=0$.
 \section{}
-A graph process is identical to the model $G(n,m)$, as proved in class, so to prove the given claim, we shall use the $G(n,p)$ model, and then translate everything to $G(n,m)$. The proofs for the claims we are using shall be given \textbf{briefly}, because they can be found in textbooks and lecture notes.
+A graph process is identical to the model $G(n,m)$, as proved in class, so to prove the given claim, we shall use the $G(n,p)$ model, and then translate everything to $G(n,m)$. The proofs for the claims we are using shall be given \textbf{briefly}, because they are given in textbooks and lecture notes.
 
-First, we observe that having a triangle is a monotone \textbf{increasing} property, because once we have a triangle in $G$, adding more edges will keep the existing triangle, while removing edges may result in omitting edges that belong to the triangle. Also, being connected is monotone \textbf{increasing} property, because once $G$ is connected, adding more edges will keep it connected, while removing edges may result in omitting edges that connect vertices that are otherwise isolated.
+First, we observe that having a triangle is a monotone \textbf{increasing} property, because once we have a triangle in $G$, adding more edges will keep the existing triangle, while removing edges may result in omitting edges that belong to the triangle. Also, being connected is a monotone \textbf{increasing} property, because once $G$ is connected, adding more edges will keep it connected, while removing edges may result in omitting edges that connect vertices that are otherwise isolated.
 
 For this reason, we can look for thresholds both to having a triangle and being connected, and calculate the probability to have a triangle before being connected.
 
@@ -102,6 +102,8 @@ But $p=\frac{c\log{n}}{n}\rightarrow{0}$ as $n\rightarrow\infty$, for any consta
 Thus, for any small constant $c>0$, a.a.s there exists at least one isolated vertex, that is, $G$ is not connected.
 Thus, in conclusion, the probability $p=p(n)=\frac{c\log{n}}{n}$, where $c>0$ is any small constant, $p(n)$ is a threshold for $G$ to have at least one triangle, and a threshold for $G$ to have at least one isolated vertex (so not connected), and because $G(n,m)$ assumes the thresholds from $G(n,p)$, through the relation $m\approx\binom{n}{2}p$, we get that $m\approx\binom{n}{2}p(n)=\binom{n}{2}\frac{c\log{n}}{n}=\frac{cn(n-1)\log{n}}{2n}=\frac{c}{2}(n-1)\log{n}\rightarrow\infty$, as $n\rightarrow\infty$.
 Thus, we get that a.a.s the graph process has at least one triangle before it is connected.
+
+Notice that even though we use the term \textbf{threshold}, we do not actually show that $\frac{c\log{n}}{n}$ is a threshold, for having a triangle and having an isolated vertex, not mentioning determining whether it is sharp or not. We merely aim to show that at $p(n)=\frac{c\log{n}}{n}$, for some small constant $c>0$, a.a.s there exists at least one triangle and at least one isolated vertex in $G\sim{G(n,p)}$.
 \section{}
 Graph planarity is a monotone \textbf{decreasing} property, because if $G$ is planar, then removing edges will keep it planar, while adding edges may turn it to non-planar.
 
