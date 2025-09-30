@@ -12,21 +12,24 @@
 
 \maketitle
 
+In all the following, unless specified otherwise, $G=(V,E)=([n],E)$, where $n=\infty$.
 \section{}
-\subsection{}
+\subsection*{(a)}
 Let $G_0\in{A}$ be a specific graph in the property $A$. The probability \[\mathbb{P}[G\sim{G(n,p)}=G_0],\]
 where $G$ is a random graph in the model $G(n,p)$, is the probability for $G$ to have all the edges of $G_0$ and only them, that is,
 \[\mathbb{P}[G\sim{G(n,p)}=G_0]=p^m(1-p)^{N-m},\]
 where $m=e(G_0)$ is the number of edges in $G_0$ and $N=\binom{n}{2}$ is the number of possible edges between $n$ vertices.
 
 The probability for a random $G$ to be in the property $A$ is the probability of the union of events $\{G\sim{G(n,p)}=H\}_{H\in{A}}$, but these events are distinct, hence \[\mathbb{P}[G\sim{G(n,p)}\in{A}]=\mathbb{P}[\bigcup_{H\in{A}}\{G\sim{G(n,p)}=H\}]=\sum_{H\in{A}}\mathbb{P}[G\sim{G(n,p)}=H]=\]\[=\sum_{H\in{A}}p^{m_H}(1-p)^{N-m_H},\]
-where $m_H=e(H)$ is the number of edges in $H$ and $N=\binom{n}{2}$ as before. But this is a polynomial in $p$, hence a continuous function of $p$. 
+where $m_H=e(H)$ is the number of edges in $H$ and $N=\binom{n}{2}$ as before. But this is a polynomial in the variable $p$, hence a continuous function of $p$. 
 
 In addition,
-\[G(V,\phi)\notin{A}\Rightarrow\mathbb{P}[G\sim{G(n,0)}\in{A}]=0\]\[K_n\in{A}\Rightarrow\mathbb{P}[G\sim{G(n,1)}\in{A}]=1\]
+\[([n],\phi)\notin{A}\Rightarrow\mathbb{P}[G\sim{G(n,0)}\in{A}]=0\]\[K_n\in{A}\Rightarrow\mathbb{P}[G\sim{G(n,1)}\in{A}]=1\]
 
-Thus, by the intermediate value theorem, for any $0\leq{a}\leq{1}$ there exists $0\leq{p_a}\leq{1}$, s.t. $\mathbb{P}[G\sim{G(n,p_a)}\in{A}]=a$. We take $a=\frac{1}{2}$, so $p^\ast=p_\frac{1}{2}$.
-\subsection{}
+Thus, by the \textbf{intermediate value theorem}, for any $0\leq{a}\leq{1}$ there exists $0\leq{p_a}\leq{1}$, s.t. $\mathbb{P}[G\sim{G(n,p_a)}\in{A}]=a$. We take $a=\frac{1}{2}$, so $p^\ast=p_\frac{1}{2}$.
+
+(For this, we did not even have to use the fact that $A$ is a monotone increasing property).
+\subsection*{(b)}
 For every $0\leq{k}\leq{1}$ and $k\geq{0}$, $1-kp\leq(1-p)^k$, by simple induction,
 
 For $k=0$, $1-0\cdot{p}=1\leq{(1-p)^0}=1$
@@ -37,8 +40,9 @@ Let $0\leq{q}\leq{1}$ be a probability s.t. $1-q=(1-p)^k$, by staged exposure it
 \[\mathbb{P}[G(n,q)\in{A}]=\mathbb{P}[\bigcup_{i=1}^kG(n,p)\in{A}]\Rightarrow\mathbb{P}[G(n,q)\notin{A}]=\mathbb{P}[\bigcap_{i=1}^kG(n,p)\notin{A}]=\]\[=\prod_{i=1}^k\mathbb{P}[G(n,p)\notin{A}]=(1-\mathbb{P}[G(n,p)\in{A}])^k=(1-q)^k,\]
 because all distinct copies of $G(n,p)$ are independent.
 
-But $1-kp\leq(1-p)^k=1-q\Rightarrow{kp\geq{q}}\Rightarrow\mathbb{P}[G(n,kp)\in{A}]\geq\mathbb{P}[G(n,q)\in{A}]$, because $A$ is a monotone \textbf{increasing} property. But then $\mathbb{P}[G(n,kp)\notin{A}]\leq\mathbb{P}[G(n,q)\notin{A}]=(\mathbb{P}[G(n,p)\notin{A}])^k$.
-\subsection{}
+But $1-kp\leq(1-p)^k=1-q\Rightarrow{kp\geq{q}}\Rightarrow\mathbb{P}[G(n,kp)\in{A}]\geq\mathbb{P}[G(n,q)\in{A}]$, because $A$ is a monotone \textbf{increasing} property. But then 
+\[\mathbb{P}[G(n,kp)\notin{A}]\leq\mathbb{P}[G(n,q)\notin{A}]=(\mathbb{P}[G(n,p)\notin{A}])^k.\]
+\subsection*{(c)}
 $\omega\rightarrow\infty$, s.t. $\omega=o(n)$.
 
 $\Rightarrow\forall{n>0}$, denote $\omega=\omega(n)$, there exists some $k$, s.t. 
@@ -47,9 +51,9 @@ $\Rightarrow\forall{n>0}$, denote $\omega=\omega(n)$, there exists some $k$, s.t
 But, 
 \[\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq(\mathbb{P}[G(n,p^\ast)\notin{A}])^k=(1-\mathbb{P}[G(n,p^\ast)\in{A}])^k=\frac{1}{2^k}.\]
 Thus, 
-\[0\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\frac{1}{2^k}=0\Rightarrow\]\[\Rightarrow\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\in{A}]\geq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\in{A}]=1.\]
+\[0\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\notin{A}]\leq\lim_{k\rightarrow\infty}\frac{1}{2^k}=0\Rightarrow\]\[\Rightarrow\lim_{k\rightarrow\infty}\mathbb{P}[G(n,(k+1)p^\ast)\in{A}]\geq\lim_{k\rightarrow\infty}\mathbb{P}[G(n,kp^\ast)\in{A}]\geq{1}-\lim_{k\rightarrow\infty}\frac{1}{2^k}=1.\]
 But then, by the Sandwich theorem, 
-\[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\omega(n)p^\ast)\in{A}].\]
+\[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\omega(n)p^\ast)\in{A}]=1.\]
 
 Also, $k\leq\omega<k+1\Rightarrow\frac{1}{k+1}<\frac{1}{\omega}\leq\frac{1}{k}\Rightarrow\frac{p^\ast}{k+1}<\frac{p^\ast}{\omega}\leq\frac{p^\ast}{k}$.
 But,
@@ -57,7 +61,7 @@ $\frac{p^\ast}{k+1}\geq{0}$, and $\frac{p^\ast}{k}\leq\frac{1}{k}\Rightarrow\lim
 \[\lim_{n\rightarrow\infty}\mathbb{P}[G(n,\frac{p^\ast}{\omega(n)})\in{A}]=\lim_{p\rightarrow{0}}\mathbb{P}[G(n,p)\in{A}]=0,\]
 because $\mathbb{P}[G(n,p)\in{A}]$ is continuous in $[0,1]$, and $\mathbb{P}[G(n,0)\in{A}]=0$.
 \section{}
-A graph process is identical to the model $G(n,m)$, as proved in class, so to prove the given claim, we shall use the $G(n,p)$ model, and then translate everything to $G(n,m)$. The proofs for the claims we are using shall be given \textbf{briefly}, because they can be found in textbooks class notes.
+A graph process is identical to the model $G(n,m)$, as proved in class, so to prove the given claim, we shall use the $G(n,p)$ model, and then translate everything to $G(n,m)$. The proofs for the claims we are using shall be given \textbf{briefly}, because they can be found in textbooks and lecture notes.
 
 First, we observe that having a triangle is a monotone \textbf{increasing} property, because once we have a triangle in $G$, adding more edges will keep the existing triangle, while removing edges may result in omitting edges that belong to the triangle. Also, being connected is monotone \textbf{increasing} property, because once $G$ is connected, adding more edges will keep it connected, while removing edges may result in omitting edges that connect vertices that are otherwise isolated.
 
@@ -130,36 +134,36 @@ as $n\rightarrow\infty$.
 
 Thus, for $m=(1+\epsilon)n$, the limit probability for $G$ to be $5$-degenerate is {0}, hence the limit probability for $G$ to be non-planar is $1$, and since planarity is monotone \textbf{decreasing}, we get that it is a threshold value, that is, for every $m\geq(1+\epsilon)n$, a.a.s. $G$ is non-planar.
 \section{}
-\subsection{}
+\subsection*{(a)}
 For $n$ vertices, we have $n!$ permutations, but Hamilton cycles are indifferent to the starting point (since they are \textbf{cycles}), hence we divide the number of permutations by the number of starting points for each cycle, that is $n$. Hamilton cycles are also indifferent to direction, hence we divide this count by $2$ and we get $\frac{(n-1)!}{2}$. For each permutation $\sigma$ of the $n$ vertices, each edge in $\mu(F)$ comes from an edge between two vertices in the consecutive layers of $W$ ordered by $\sigma$, but that is $d$ choices of vertices from layers $\sigma(1),\sigma(2)$, then $d-1$ choices of the remaining vertices from layer $\sigma(k)$ together with $d$ choices of vertices from layer $\sigma(k+1)$, for every $2\leq{k}\leq{n-1}$, then $d-1$ choices of the remaining vertices from layers $\sigma(n),\sigma(1)$, but because all the choices are independent, we have $d^2(d(d-1))^{n-2}(d-1)^2=(d(d-1))^n$ choices.
 
 We calculate the number of choices for constructing $F$ s.t. $\mu(F)$ is Hamiltonian, and the total number of choices for constructing $F$.
 
 Denote by $m$ the number of available vertices, for both constructions, we need to choose $\frac{m}{2}$ pairs out of $m$ vertices, that is $\frac{m!}{2^{\sfrac{m}{2}}}$, but the order between the pairs is insignificant, hence we get $\frac{m!}{2^{\sfrac{m}{2}}(\sfrac{m}{2})!}$
 
-For the general construction we set $m=nd$, and for the Hamiltonian construction we set $m=n(d-2)$, because we already chose $2$ vertices of each of the $n$ layers. Thus, the probability to choose uniformly a Hamiltonian construction is $\frac{\frac{(n(d-2))!}{2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}}{\frac{(nd)!}{2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}}$, hence, multiplying these two results, we get \[
-\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{\frac{(n(d-2))!}{2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}}{\frac{(nd)!}{2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}}
+For the general construction we set $m=dn$, and for the Hamiltonian construction we set $m=(d-2)n$, because we already chose $2$ vertices of each of the $n$ layers. Thus, the probability to choose uniformly a Hamiltonian construction is $\frac{\frac{((d-2)n)!}{2^{\sfrac{(d-2)n}{2}}(\sfrac{(d-2)n}{2})!}}{\frac{(dn)!}{2^{\sfrac{dn}{2}}(\sfrac{dn}{2})!}}$, hence, multiplying these two results, we get \[
+\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{\frac{((d-2)n)!}{2^{\sfrac{(d-2)n}{2}}(\sfrac{(d-2)n}{2})!}}{\frac{(dn)!}{2^{\sfrac{dn}{2}}(\sfrac{dn}{2})!}}
 .\]
 Simplifying this expression, we get
 \[
-\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{(n(d-2))!2^{\sfrac{nd}{2}}(\sfrac{nd}{2})!}{(nd)!2^{\sfrac{n(d-2)}{2}}(\sfrac{n(d-2)}{2})!}
+\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{((d-2)n)!2^{\sfrac{dn}{2}}(\sfrac{dn}{2})!}{(dn)!2^{\sfrac{(d-2)n}{2}}(\sfrac{(d-2)n}{2})!}
 .\]
-\subsection*{4.b}
+\subsection*{(b)}
 By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence 
 \[\mathbb{E}[H]\approx\frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}
 \cdot(d(d-1))^n\cdot\]\[
-\quad\cdot\frac{\sqrt{2\pi{n(d-2)}}\left(\tfrac{n(d-2)}{e}\right)^{n(d-2)}\cdot{2^{nd/2}}\cdot\sqrt{\pi nd}\cdot\left(\tfrac{nd/2}{e}\right)^{nd/2}}
-         {\sqrt{\pi nd/2}\left(\tfrac{n(d-2)/2}{e}\right)^{n(d-2)/2}\cdot 2^{nd/2}\cdot2^{-n}\cdot\sqrt{2\pi nd}\cdot\left(\tfrac{nd}{e}\right)^{nd}}
+\quad\cdot\frac{\sqrt{2\pi{(d-2)n}}\left(\tfrac{(d-2)n}{e}\right)^{(d-2)n}\cdot{2^{dn/2}}\cdot\sqrt{\pi dn}\cdot\left(\tfrac{dn/2}{e}\right)^{dn/2}}
+         {\sqrt{\pi dn/2}\left(\tfrac{(d-2)n/2}{e}\right)^{(d-2)n/2}\cdot 2^{dn/2}\cdot2^{-n}\cdot\sqrt{2\pi dn}\cdot\left(\tfrac{dn}{e}\right)^{dn}}
 =\]\[=\frac{\sqrt{2\pi{n}}\,\left(\tfrac{n}{e}\right)^n}{2n}\cdot(d(d-1))^n\cdot\]
-\[\quad\cdot2^n\cdot e^{nd+\tfrac{n(d-2)}{2}-\tfrac{nd}{2}-n(d-2)}\cdot{n}^{-nd- \tfrac{n(d-2)}{2}+\tfrac{nd}{2}+n(d-2)}
-\quad\cdot(d-2)^{\tfrac{n(d-2)}{2}} \cdot{d}^{-nd/2}\cdot{2^{-n}}
+\[\quad\cdot2^n\cdot e^{dn+\tfrac{(d-2)n}{2}-\tfrac{dn}{2}-(d-2)n}\cdot{n}^{-dn- \tfrac{(d-2)n}{2}+\tfrac{dn}{2}+(d-2)n}
+\quad\cdot(d-2)^{\tfrac{(d-2)n}{2}} \cdot{d}^{-dn/2}\cdot{2^{-n}}
 =\]\[=\frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}\cdot(d(d-1))^n\cdot{e^n} \cdot{n^{-n}}
-    \cdot{d}^{-\tfrac{nd}{2}}\cdot(d-2)^{\,n(-1+\tfrac{d}{2})}
+    \cdot{d}^{-\tfrac{dn}{2}}\cdot(d-2)^{\,n(-1+\tfrac{d}{2})}
 =\]\[=\sqrt{\frac{\pi}{2n}}\,(d-1)^n\,d^{\,n(1-\tfrac{d}{2})}\cdot(d-2)^{\,-n(1-\tfrac{d}{2})}
 \approx\sqrt{\frac{\pi}{2n}}\,\Big[(d-1)\,\left(\tfrac{d-2}{d}\right)^{\tfrac{d-2}{2}}\Big]^n.\]
-\subsection*{4.c}
+\subsection*{(c)}
 
-\subsection*{4.d}
+\subsection*{(d)}
 The following calculation shows the number of choices to construct all $2$-factors, along with constructions that are not $2$-factors, and hence it is an \textbf{upper bound} for the desired number of choices.
 
 We need to choose $n$ pairs out of $2n$ vertices, two of each layer, that is $\frac{(2n)!}{2^n}$, but the order of choosing them is insignificant, hence the number of choices is $\frac{(2n)!}{n!2^n}$.
@@ -167,12 +171,12 @@ Each $2$-factor is constructed by choosing $2$ vertices of each layers, that is 
 
 We calculate the probability, using the number of choices for pairs that we found earlier, that is $\frac{m!}{\frac{m}{2}!2^{\frac{m}{2}}}$, where $m$ is the total number of vertices to choose from.
 
-For the total number of configurations we set $m=nd$, and for the number of configurations that can construct a $2$-factor we set $m=n(d-2)$, thus the probability is $
-\frac{\frac{(n(d-2))!}{(\frac{n(d-2)}{2})!2^{\frac{n(d-2)}{2}}}}{\frac{(nd)!}{(\frac{nd}{2})!2^{\frac{nd}{2}}}}=\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
+For the total number of configurations we set $m=dn$, and for the number of configurations that can construct a $2$-factor we set $m=(d-2)n$, thus the probability is $
+\frac{\frac{((d-2)n)!}{(\frac{(d-2)n}{2})!2^{\frac{(d-2)n}{2}}}}{\frac{(dn)!}{(\frac{dn}{2})!2^{\frac{dn}{2}}}}=\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(dn)!(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}}$.
 
-Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{(n(d-2))!(\sfrac{nd}{2})!2^{\sfrac{nd}{2}}}{(nd)!(\sfrac{n(d-2)}{2})!2^{\sfrac{n(d-2)}{2}}}$.
+Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(dn)!(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}}$.
 
-\subsection*{4.e}
+\subsection*{(e)}
 Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S_d$ the set of simple $d$-regular graphs, then the expectation 
 \[\mathbb{E}[T_d]=\mathbb{E}[T|\mu(F)\in{S_d}]\leq\frac{\mathbb{E}[T]}{\mathbb{P}[\mu(F)\in{S_d}]}=e^{\frac{d^2-1}{4}}O(\mathbb{E}[T]).\]
 
@@ -180,13 +184,13 @@ But by Markov inequality,
 
 $\mathbb{P}[T_d\geq{n\mathbb{E}[T]}]\leq\frac{\mathbb{E}[T_d]}{n\mathbb{E}[T]}=\frac{e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])}{n\mathbb{E}[T]}$.
 
-But $f=O(\mathbb{E}[T])$ means that asymptotically, $|f|\leq{c\mathbb{E}[T]}$, for some constant $c$, hence, asymptotically $\frac{e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])}{n\mathbb{E}[T]}\leq\frac{c\mathbb{E}[T]}{n\mathbb{E}[T]}=\frac{c}{n}\rightarrow{0}$, as $n\rightarrow\infty$.
+But $f=O(\mathbb{E}[T])$ means that asymptotically, $|f|\leq{c|\mathbb{E}[T]|}=c\mathbb{E}[T]$, for some constant $c>0$, hence, asymptotically $\frac{e^{\frac{d^2-1}{4}}O(\mathbb{E}[T])}{n\mathbb{E}[T]}\leq\frac{c\mathbb{E}[T]}{n\mathbb{E}[T]}=\frac{c}{n}\rightarrow{0}$, as $n\rightarrow\infty$.
 
 \[
 \Rightarrow\lim_{n\rightarrow\infty}\mathbb{P}[T_d<n\mathbb{E}[T]]=1-\lim_{n\rightarrow\infty}\mathbb{P}[T_d\geq{n\mathbb{E}[T]}]=1
 \]
 
-\subsection*{4.f}
+\subsection*{(f)}
 We use $T_d$ from earlier, and we denote $H_d$ the number of Hamilton cycles in a random $d$-regular graph. 
 
 We already saw that $\mathbb{E}[H_d]\geq\frac{\mathbb{E}[H]}{n}$ and that $\mathbb{E}[T_d]\leq{n\mathbb{E}[T]}$.
@@ -196,11 +200,11 @@ We already saw that $\mathbb{E}[H_d]\geq\frac{\mathbb{E}[H]}{n}$ and that $\math
 \geq
 \frac{
 \dfrac{(n-1)!}{2} (d(d-1))^n \cdot
-\dfrac{(n(d-2))! \, 2^{nd/2} (nd/2)!}{(nd)! \, 2^{n(d-2)/2} (n(d-2)/2)!}
+\dfrac{((d-2)n)! \, 2^{dn/2} (dn/2)!}{(dn)! \, 2^{(d-2)n/2} ((d-2)n/2)!}
 }{
 n^2 \cdot \binom{d}{2}^n \cdot 
 \dfrac{(2n)!}{n! 2^n} \cdot 
-\dfrac{(n(d-2))! (\tfrac{nd}{2})! 2^{nd/2}}{(\tfrac{n(d-2)}{2})! 2^{n(d-2)/2} (nd)!}
+\dfrac{((d-2)n)! (\tfrac{dn}{2})! 2^{dn/2}}{(\tfrac{(d-2)n}{2})! 2^{(d-2)n/2} (dn)!}
 }
 =\]\[=
 \frac{
@@ -216,28 +220,40 @@ n^2 \cdot \dfrac{(d(d-1))^n}{2^n} \cdot \dfrac{(2n)!}{n! 2^n}
 }
 \geq\frac{1}{2} n^{-2.5}.\]
 
-\subsection*{4.g}
-$G=(V,E)$.
-
+\subsection*{(g)}
 Following the construction by Tutte, $\forall{v}\in{V}$, $f=f(v)=2$, and we construct $St(v)=X(v)\cup{Y}(v)$, where $X(v)$ has $d(v)$ distinct vertices and $Y(v)$ has $s(v)=d(v)-f(v)=d(v)-2$ distinct vertices, and we construct a new graph $G'=(V',E')$, s.t. \[V'=\bigcup_{v\in{V}}(X(v)\cup{Y}(v),\] 
 
 by matching all $s(v)=d(v)-f(v)=d-2$ vertices of $Y(v)$ with $s(v)$ vertices in $X(v)$, while two vertices in $X(v)$ are left unmatched inside $St(v)$. Let $u\in{V}$ be a vertex in $G$, such that $(v,u)\in{E}$, then we add an edge in $G'$ between one of $X(v)$ unmatched vertices and one of $X(u)$ unmatched vertices, hence $E'$ is a union of all the edges between $X(v)$ and $Y(v)$, for every $v\in{V}$, and the edges connecting between the different $St(v)$ in $G'$.
 
 We find a perfect matching $M$ of $G'$, that is, \textbf{every} vertex $m\in{M}$ must be an end of \textbf{one} edge only, hence $M$ is a $1$-factor of $G'$, and by the lemma proved by Tutte, $G'$ has a $1$-factor if and only if $G$ has an $f$-factor, in our case $f=2$.
 
-For the proof (of the direction from $1$-factor to $f$-factor), denote by $v_1,v_2,\dots,v_f$ the vertices in each $X(v)$ that are not matched with vertices of $Y(v)$, for every $v\in{V}$. They must be ends of edges in $M$, and the only edges whose ends are these vertices, are the edges that connected the different $St(v)$ in $G'$, but each $St(v)$ is constructed from a vertex $v\in{V}$ in $G$, thus we found an $f$-factor in $G$, because every vertex $v\in{V}$ is an end of $f=f(v)$ edges.
-\subsection*{4.h}
-phase 1: as in (g), we build $G'$, and use the perfect matching algorithm. We get a 2-factor on $G$.\\
-phase 2: in (f) we proved that the ratio between the number of the Hamilton circles to the number of 2-factors in a d-regular graph is at least $\frac{1}{2n^{2.5}}$ a.a.s.. Therefore if we repeat phase 1 at least $n^{3.5}$ times we have:
+For the proof (of the direction from $1$-factor to $f$-factor), denote by $v_1,v_2,\dots,v_f$ the vertices in each $X(v)$ that are not matched with vertices of $Y(v)$, for every $v\in{V}$. They must be ends of edges in $M$, and the only edges whose ends are these vertices, are the edges that connect the different $St(v)$ in $G'$, but each $St(v)$ is constructed from a vertex $v\in{V}$ in $G$, thus we found an $f$-factor in $G$, because every vertex $v\in{V}$ is an end of $f=f(v)$ edges.
+\subsection*{(h)}
+We saw earlier that for every graph $G$, we can find a $2$-factor by constructing $G'$ as suggested by Tutte, then getting a perfect matching $M$ of $G'$, then constructing a $2$-factor of $G$ by selecting the edges of $M$. 
+
+Constructing $G'$ is done by matching, for every $v\in{V}$, the $d-2$ vertices of $Y(v)$ with $d-2$ vertices in $X(v)$, that is $(d-2)n$ operations, and then matching $v_1,v_2$, that is $2n$ operations, hence $dn=O(n)$ operations in total.
+Then we use the algorithm to find $M$ of $G'$, that is $O(g(n))$ operations, where $g(n)$ is some finite-degree (of at least $1$) polynomial in the variable $n$. Then we go over all the edges of $M$ to construct the $2$-factor, that is $\frac{n}{2}$, thus we have in total a sum of polynomials of up to some finite degree $k$ in the variable $n$, that is, the total time for the algorithm $G\rightarrow{G'}\rightarrow{M}\rightarrow{2}$-factor is $O(n^k)$.
+
+But we saw that a.a.s,
 \[
-\mathbb{P}(\{\substack{\text{not getting Hamilton} \\ \text{circle even once}}\})\leq(1-\frac{1}{2n^{2.5}})^{n^{3.5}}=((1-\frac{1/2}{n^{2.5}})^{n^{2.5}})^n\approx e^{-\frac{1}{2}n}\xrightarrow{n \to \infty}0
-\]\\
-Therefore a.a.s. we get a Hamilton circle in $G$.\\
-Since the matching algorithm is polynomial, and we use it $n^{3.5}$ times, the total algorithm is polynomial.
-\hfill $\square$
+\frac{\mathbb{E}[H_d]}{\mathbb{E}[T_d]}\geq\frac{1}{2}n^{-2.5},
+\]
+where $H_d$ is the number of Hamiltonian cycles and $T_d$ is the number of $2$-factors.
+
+Hence, there exists the conditional probability
+\[\mathbb{P}[G\,\text{has a Hamilton cycle}\,|\,G\,\text{has a 2-factor}]\geq\frac{1}{2}n^{-2.5}\Rightarrow\]\[\Rightarrow{p}=\mathbb{P}[G\,\text{does not have a Hamilton cycle}\,|\,G\,\text{has a 2-factor}]\leq{1}-\frac{1}{2}n^{-2.5}.\]
+But if we use the algorithm $m$ consecutive times, we get 
+\[
+\mathbb{P}[G\,\text{does not has a Hamilton cycle after using}\,m\, \text{times the algorithm for a $2$-factor}]=\]\[=p^m\leq(1-\frac{1}{2}n^{-2.5})^m.
+\]
+Take $m\in\mathbb{N}$, s.t. $m\geq{3.5n}$, hence 
+\[(1-\frac{1}{2}n^{-2.5})^m\leq(1-\frac{1}{2}n^{-2.5})^{3.5n}=[(1-\frac{1}{2}n^{-2.5})^{2.5n}]^n\approx{e}^{-\frac{1}{2}n}\rightarrow{0},
+\]
+as $n\rightarrow\infty$.
+
+But the total time of the algorithm is $O(n^k)$, hence using it $m$ consecutive times is $O((n^k)^m)=O(n^{km})$, thus the total time of this whole procedure is also polynomial.
 \section{}
-$G=G(V,E)$.
-\subsection{}
+\subsection*{(a)}
 We define the following first order formula,
 
 $\varphi(x)=\exists{y,z}$ . $y\neq{x}\land{z\neq{x}}\land{y\neq{z}}\land{x\sim{y}}\land{y\sim{z}}\land{z\sim{x}}$
@@ -247,32 +263,51 @@ Or, under the assumption that $G$ is always a simple graph,
 $\varphi(x)=\exists{y,z}$ . $x\sim{y}\land{y\sim{z}}\land{z\sim{x}}$
 
 Denote $U:=\{u\in{V}\,|\,{G\vDash\varphi(u)}\}$, then for every $x$, either $x\in{U}$ or $x\notin{U}$.
-\subsection{}
-$G=(V,E)=([n],E)$, where $n=\infty$.
-
-We define a first order language sentence, with $v,y,z,x_1,x_2,\dots,x_k$ distinct,
+\subsection*{(b)}
+We define a first order language formula, with $x_1,x_2,\dots,x_k$ distinct,
 \[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}(x_i=v\lor{v}=x_{i+1}\lor\neg(x_i\sim{x_{i+1}})).\]
-This sentence says that for any given vertices $y,z$, there is no path between them that does not pass through $v$.
+This formula says that for any given two distinct vertices $y,z$, there is no path of length $k$ between them that does not pass through $v$.
 
-Suppose that there exists $\varphi(v)$ a first order sentence, defined as
+Suppose that there exists a first order language formula $\varphi(v)$, defined as
 
 $\varphi(v)=$\textbf{v is a cut vertex}.
 
-We define a theory $T$,
+We define a theory $T$ ($v$ is a free variable),
 
-$\exists{y,z}\,.$
+$\exists{y,z}\,.\,y\neq{v}\land{z}\neq{v}\land{y}\neq{z}\,.$
 \begin{enumerate}
-    \item $y\neq{v}\land{z}\neq{v}\land{y}\neq{z}\land{y\sim{v}}\land{z\sim{v}}\land\neg(y\sim{z})$.
+    \item $CONN(y,z)$.
     \item 
     $\bigwedge_{k=1}^\infty\theta_k(v,y,z)$.
     \item 
     $\neg\varphi(v)$.
 \end{enumerate}
+(meaning $T=1\land{2}\land{3})$.
 
-This theory is infinite, because $n=\infty$. But by the compactness theorem, $T$ is satisfiable is and only if every finite subset $S\subset{T}$ is satisfiable.
-Then take some arbitrary integer $m>0$, and define $T_m\subset{T}$ with all the sentences, except that we take $\bigwedge_{k=1}^m\theta_k(v,y,z)$ instead of the infinite $\bigwedge$.
-But then we simply construct a graph $G_m=([n],E)$, with two distinct vertices that are adjacent to $v$ and there exists a path of length $m+1$ between $y$ and $z$, but there are no paths of length $\leq{m}$, hence $T_m$ is satisfiable but $T$ is not, in contradiction to the compactness theorem.
-\subsection{}
+This theory is infinite, because in formula $2$ we run $k$ from $1$ to $n=\infty$.
+
+
+For every \textbf{finite} $m>0$, we define a (finite) theory $T_m$ with all the formulas from $T$, except that we take the finite conjunction  $\bigwedge_{k=1}^m\theta_k(v,y,z)$ instead of the infinite conjunction $\bigwedge_{k=1}^\infty\theta_k(v,y,z)\Rightarrow{T_m}\subset{T}$.
+
+We construct a graph $G_m$ in the form of one circle (so one connected component), with two distinct vertices $y,z$, s.t. $y$ and $z$ have one path $A$ of length $m+1$ between them, without $v$ in the path, and another path $B$ of an arbitrary length with $v$ in the path (can be only $v$ itself).
+
+$G_m$ satisfies $T_m$, because
+\begin{enumerate}
+    \item 
+    $CONN(y,z)$ is satisfied.
+    \item
+    $v$ is not a vertex in the path $A$, but $A$ is of length $m+1$.
+
+    $v$ is a vertex in the path $B$.
+
+    $\Rightarrow\bigwedge_{k=1}^m\theta_k(v,y,z)$ is satisfied.
+    \item 
+    If we remove $v$, we are still left with one connected component (though a path, not a circle) $\Rightarrow\neg\varphi(v)$ is satisfied.
+\end{enumerate}
+hence $T_m$ is satisfiable by the graphs $G_m$, for every finite $m>0$, hence by the \textbf{compactness theorem}, there is a graph $G$ that satisfies $T$ itself. Same as $G_m$, also $G$ has to have two distinct $y,z$, s.t. $CONN(y,z)$, and $\theta_k(v,y,z)$ is true for every $k>0$ and $\neg\varphi(v)$, that is, we need to have a path $A$ of infinite length between $y$ and $z$ without $v$ as a vertex in $A$ (otherwise, if $A$ is of length $r$, for some finite $r>0$, then $T_r\equiv{T}$, which is a contradiction), and a path $B$ with $v$ as a vertex in it. But for this construction, removing $v$ leaves no finite path between $y$ and $z$, hence $v$ is a cut vertex, in contradiction to $\neg\varphi(v)$.
+
+$\Rightarrow{\varphi(v)}$ is not a first order language formula, hence the set of all cut vertices is not a definable set.
+\subsection*{(c)}
 The empty set can be defined by the following first order formula,
 
 $\varphi_1(x)=x\neq{x}$, which is a contradiction, hence 
@@ -283,18 +318,18 @@ The set of all graph vertices can be defined by the following first order formul
 
 $\varphi_2(x)=x=x$, which is a tautology, hence $U_2:=\{u\in{V}\,|\,{G\vDash\varphi_2(u)}\}=V$.
 
-Both formulas are either true or false for all $v\in{V}$, therefore the sets that satisfy them are called the trivial definable sets.
+Both formulas are either true or false $\forall{v}\in{V}$, therefore the sets that satisfy them are called the trivial definable sets (non trivial definable sets would be proper subsets $U=V_\varphi\subset{V}$, that is, there exist $v,u\in{V}$, s.t. $G\vDash\varphi(u)\Rightarrow{u}\in{U}$ and $G\nvDash\varphi(v)\Rightarrow{v}\notin{U}$).
 
-Comment: there are specific symbols in first order languages, to specify tautology and contradiction, but I prefer the above sentences.
-\subsection{}
+\textbf{Comment:} there are specific symbols in first order languages, to specify tautology and contradiction, but I prefer these formulas.
+\subsection*{(d)}
 The required statement would be,
 \noindent
-\[\tilde\varphi=\forall{0\leq{p}\leq{1}},\epsilon>0\,.\,\exists{N}\,.\,\forall{n>N},\varphi\,.\,\]\[.\,\varphi=\varphi_\phi\lor\varphi=\varphi_V\lor\mathbb{P}[G(n,p)\vDash\varphi]<\epsilon\]
+\[\tilde\varphi=\forall{0\leq{p}\leq{1}},\forall\epsilon>0\,.\,\exists{N}\,.\,\forall{n>N},\forall{v}\in{V},\forall\varphi\,.\,\]\[.\,(\varphi=\varphi_1\lor\varphi=\varphi_2\lor\mathbb{P}[G\sim{G(n,p)}\vDash\varphi(v)]<\epsilon).\]
 
 Another version of $\tilde\varphi$,
 \noindent
-\[\tilde\varphi=\forall{0\leq{p}\leq{1}},\epsilon>0\,.\,\exists{N}\,.\,\forall{n>N},\varphi\,.\,\]\[.\,\neg(\exists{v,u\in{V}}\,.\,\varphi\neq\varphi_\phi\land\varphi\neq\varphi_V\land\mathbb{P}[G(n,p)\vDash\varphi(u)]\geq\epsilon\land\mathbb{P}[G(n,p)\neg\vDash\varphi(v)]\geq\epsilon)\]
-\subsection{}
+\[\tilde\varphi=\forall{0\leq{p}\leq{1}},\forall\epsilon>0\,.\,\exists{N}\,.\,\forall{n>N},\forall\varphi\,.\,\]\[.\,\neg(\exists{v,u\in{V}}\,.\,\varphi\neq\varphi_1\land\varphi\neq\varphi_2\land\mathbb{P}[G(n,p)\vDash\varphi(u)]\geq\epsilon\land\mathbb{P}[G(n,p)\nvDash\varphi(v)]\geq\epsilon)\]
+\subsection*{(e)}
 This should be immediate from Fagin's 0-1 law, because it applies to every constant probability $0\leq{p}\leq{1}$, that is, for every constant $p$, and for every first order sentence $\varphi$,
 \[
 \lim_{n\rightarrow\infty}\mathbb{P}[G\sim{G(n,p)}\vDash\varphi]\in\{0,1\}\Rightarrow{U_\varphi\in\{\phi,V\}}.
