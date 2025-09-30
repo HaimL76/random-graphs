@@ -4,8 +4,8 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage{xfrac}
 
-\title{random-graphs}
-\author{haiml76 }
+\title{Random Graphs}
+\author{Haim Lavi, 038712105}
 \date{September 2025}
 
 \begin{document}
@@ -146,7 +146,7 @@ For the general construction we set $m=dn$, and for the Hamiltonian construction
 .\]
 Simplifying this expression, we get
 \[
-\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{((d-2)n)!2^{\sfrac{dn}{2}}(\sfrac{dn}{2})!}{(dn)!2^{\sfrac{(d-2)n}{2}}(\sfrac{(d-2)n}{2})!}
+\mathbb{E}[H]=\frac{(n-1)!}{2}(d(d-1))^n\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}(dn)!}
 .\]
 \subsection*{(b)}
 By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence 
@@ -160,9 +160,8 @@ By Stirling, $n!\approx\sqrt{2\pi{n}}(\frac{n}{e})^n$, hence
 =\]\[=\frac{\sqrt{2\pi n}\,\left(\tfrac{n}{e}\right)^n}{2n}\cdot(d(d-1))^n\cdot{e^n} \cdot{n^{-n}}
     \cdot{d}^{-\tfrac{dn}{2}}\cdot(d-2)^{\,n(-1+\tfrac{d}{2})}
 =\]\[=\sqrt{\frac{\pi}{2n}}\,(d-1)^n\,d^{\,n(1-\tfrac{d}{2})}\cdot(d-2)^{\,-n(1-\tfrac{d}{2})}
-\approx\sqrt{\frac{\pi}{2n}}\,\Big[(d-1)\,\left(\tfrac{d-2}{d}\right)^{\tfrac{d-2}{2}}\Big]^n.\]
+\approx\sqrt{\frac{\pi}{2n}}\,\Big[(d-1)\,\left(\tfrac{d-2}{d}\right)^{\sfrac{(d-2)}{2}}\Big]^n.\]
 \subsection*{(c)}
-
 \subsection*{(d)}
 The following calculation shows the number of choices to construct all $2$-factors, along with constructions that are not $2$-factors, and hence it is an \textbf{upper bound} for the desired number of choices.
 
@@ -174,7 +173,7 @@ We calculate the probability, using the number of choices for pairs that we foun
 For the total number of configurations we set $m=dn$, and for the number of configurations that can construct a $2$-factor we set $m=(d-2)n$, thus the probability is $
 \frac{\frac{((d-2)n)!}{(\frac{(d-2)n}{2})!2^{\frac{(d-2)n}{2}}}}{\frac{(dn)!}{(\frac{dn}{2})!2^{\frac{dn}{2}}}}=\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(dn)!(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}}$.
 
-Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(dn)!(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}}$.
+Thus, the expectation $\mathbb{E}[T]\leq\binom{d}{2}^n\frac{(2n)!}{n!2^n}\frac{((d-2)n)!(\sfrac{dn}{2})!2^{\sfrac{dn}{2}}}{(\sfrac{(d-2)n}{2})!2^{\sfrac{(d-2)n}{2}}(dn)!}$.
 
 \subsection*{(e)}
 Let $T$ be as above (the number of $2$-factors in $\mu(F)$), and denote $T_d$ the number of $2$-factors in $G_d=(V,E)=([n],E)$, where $G_d$ is $d$-regular. Denote by $S_d$ the set of simple $d$-regular graphs, then the expectation 

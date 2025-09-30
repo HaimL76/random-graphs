@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  30 SEP 2025 21:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.14)  30 SEP 2025 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,7 +236,7 @@ n/10 ^^A \OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 =
  []
 
 [7]
-Overfull \hbox (5.19333pt too wide) detected at line 219
+Overfull \hbox (5.19333pt too wide) detected at line 218
 \OT1/cmr/m/n/10 = [] = [] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 2[] \OMS/cmsy/m/
 n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] ^^Y [] ^^A \OT1/cmr/m/n/1
 0 2[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^A [] \OT1/cm
@@ -244,19 +244,19 @@ r/m/n/10 =
  []
 
 
-Overfull \hbox (11.30951pt too wide) in paragraph at lines 230--231
+Overfull \hbox (11.30951pt too wide) in paragraph at lines 229--230
 []\OT1/cmr/m/n/10 For the proof (of the di-rec-tion from $1$-factor to $\OML/cm
 m/m/it/10 f$\OT1/cmr/m/n/10 -factor), de-note by $\OML/cmm/m/it/10 v[]; v[]; []
  ; v[]$
  []
 
 [8]
-Overfull \hbox (27.532pt too wide) detected at line 247
+Overfull \hbox (27.532pt too wide) detected at line 246
 \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G [] m []\OT1/cmr/m/n/10 ] =
  []
 
 [9] [10] [11]
-Overfull \hbox (6.32721pt too wide) detected at line 367
+Overfull \hbox (6.32721pt too wide) detected at line 366
 [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^X [] \
 U/msa/m/n/10 ^^O \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ []\OT1/
 cmr/m/n/10 )] = [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G \OMS/cmsy
@@ -304,7 +304,7 @@ KTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/isila/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/isi
 la/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 
-Output written on random-graphs.pdf (13 pages, 251251 bytes).
+Output written on random-graphs.pdf (13 pages, 251920 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
