@@ -257,16 +257,16 @@ But the total time of the algorithm is $O(n^k)$, hence using it $m$ consecutive 
 \subsection*{(a)}
 We define the following first order formula,
 
-$\varphi(x)=\exists{y,z}$ . $y\neq{x}\land{z\neq{x}}\land{y\neq{z}}\land{x\sim{y}}\land{y\sim{z}}\land{z\sim{x}}$
+$\varphi(x)=\exists{y,z}\,.\,(y\neq{x}\land{z\neq{x}}\land{y\neq{z}}\land{x\sim{y}}\land{y\sim{z}}\land{z\sim{x}})$.
 
 Or, under the assumption that $G$ is always a simple graph,
 
-$\varphi(x)=\exists{y,z}$ . $x\sim{y}\land{y\sim{z}}\land{z\sim{x}}$
+$\varphi(x)=\exists{y,z}\,.\,(x\sim{y}\land{y\sim{z}}\land{z\sim{x}}).$
 
 Denote $U:=\{u\in{V}\,|\,{G\vDash\varphi(u)}\}$, then for every $x$, either $x\in{U}$ or $x\notin{U}$.
 \subsection*{(b)}
 We define a first order language formula, with $x_1,x_2,\dots,x_k$ distinct,
-\[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}(x_i=v\lor{v}=x_{i+1}\lor\neg(x_i\sim{x_{i+1}})).\]
+\[\theta_k(v,y,z)=\forall{x_1,x_2,\dots,x_k}\in{V}\,.\]\[.\,[\neg(y\sim{x_1})\lor\neg(x_k\sim{z})\bigvee_{i=1}^{k-1}(x_i=v\lor{v}=x_{i+1}\lor\neg(x_i\sim{x_{i+1}}))].\]
 This formula says that for any given two distinct vertices $y,z$, there is no path of length $k$ between them that does not pass through $v$.
 
 Suppose that there exists a first order language formula $\varphi(v)$, defined as
