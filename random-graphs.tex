@@ -73,7 +73,7 @@ where $N_3=\binom{n}{3}$ is the number of possible triangles (choices of $3$ ver
 
 This splits into several distinct options for joint edges. For $0$ joint edges, the expectation (we denote $\mathbb{E}[X_0^2]$) to find independently $T_i$ then $T_j$ is the number of choices of $3$ out of $n$ vertices, multiplied by the probability for these chosen vertices to share a triangle, then the number of choices of $3$ out of $n-3$ vertices, multiplied by the same probability as before, so in this case $\mathbb{E}[X_0^2]=\binom{n}{3}\binom{n-3}{3}p^6\approx\frac{(np)^6}{36}$, but checking the other options, we get that the expectation for $1,2,3$ joint edges is $\mathbb{E}[X_1^2]\approx{n^5p^6}$, $\mathbb{E}[X_2^2]\approx{n^4p^5}$ and $\mathbb{E}[X_3^2]\approx{n^3p^3}$, respectively, hence the total expectation, which is a sum, because these different options are distinct events, remains $\mathbb{E}[X^2]\approx(np)^6+o((np)^6)$.
 
-We use a second-moment method, saying that \[\mathbb{P}[X>0]\geq\frac{(\mathbb{E}[X])^2}{\mathbb{P}[X^2]}\approx\frac{((np)^3)^2}{(np)^6+o((np)^6)}=\]\[=\frac{(np)^6}{(np)^6+o((np)^6)}\approx{1-o((np)^6)}\rightarrow{1},\]
+We use a second-moment method, saying that \[\mathbb{P}[X>0]\geq\frac{(\mathbb{E}[X])^2}{\mathbb{E}[X^2]}\approx\frac{((np)^3)^2}{(np)^6+o((np)^6)}=\]\[=\frac{(np)^6}{(np)^6+o((np)^6)}\approx{1-o((np)^6)}\rightarrow{1},\]
 as $n\rightarrow\infty$.
 Thus, $\frac{c\log{n}}{n}$ is a threshold for having a triangle in $G$, for any small constant $c$.
 
